@@ -1,0 +1,221 @@
+.wrapper {
+  padding: 5rem 8%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.heading span {
+  color: var(--gold);
+}
+
+/* ====== CONTENT LAYOUT ====== */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== TIMELINE ====== */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+  min-width: 340px;
+  max-width: 550px;
+  padding-left: 2.5rem;
+}
+
+/* ====== STEP CARD ====== */
+.stepCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.stepCard:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== STEP NUMBER ====== */
+.stepNumber {
+  background: var(--gold);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(245, 197, 66, 0.4);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stepNumber::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8rem;
+  width: 2px;
+  height: 9rem;
+  background: linear-gradient(to bottom, var(--gold));
+  transform: translateX(-50%);
+}
+
+.stepCard:last-child .stepNumber::after {
+  display: none;
+}
+
+/* ====== STEP CONTENT ====== */
+.stepContent {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 1rem;
+  padding: 1.2rem 1.6rem;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.stepCard:hover .stepContent {
+  border-color: var(--border-hover);
+  box-shadow: 0 6px 20px var(--shadow-accent);
+}
+
+.stepContent h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+
+.stepContent p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ====== IMAGE SECTION ====== */
+.imageSection {
+  flex: 1;
+  min-width: 340px;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.image {
+  width: 100%;
+  border-radius: 1.2rem;
+  object-fit: cover;
+  box-shadow: 0 8px 30px var(--shadow-dark);
+  transform: translateY(0);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.image:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.05);
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 950px) {
+
+    .heading {
+        font-size: 2rem;
+    }
+
+  .content {
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .imageSection {
+    order: -1;
+    margin-bottom: 3rem;
+    width: 100%;
+    display: none;
+  }
+
+  .image {
+    max-width: 500px;
+  }
+
+  .timeline {
+    padding-left: 0;
+    max-width: 500px;
+    gap: 0.5rem;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .stepCard {
+    /* flex-direction: column; */
+    align-items: center;
+    text-align: center;
+  }
+
+  .stepNumber::after {
+    left: 50%;
+  }
+
+  .stepContent {
+    max-width: 445px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .stepContent {
+    padding: 1rem 1.2rem;
+  }
+
+  .stepNumber {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .stepCard {
+    text-align: left;
+  }
+
+  .timeline::before {
+    width: 2px;
+  }
+}

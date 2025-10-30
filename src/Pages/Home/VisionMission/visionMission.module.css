@@ -1,0 +1,178 @@
+.wrapper {
+  position: relative;
+  padding: 5rem 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("/Images/vision-bg.png") center/cover no-repeat;
+  overflow: hidden;
+}
+
+
+/* ===== Heading ===== */
+.heading {
+  position: relative;
+  z-index: 2;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heading span {
+  color: var(--gold);
+}
+
+/* ===== Cards Container ===== */
+.cards {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ===== Glass Cards ===== */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  padding: .5rem 2.5rem;
+  flex: 1;
+  min-width: 320px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+/* Light reflection layer */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-15deg);
+  transition: 0.7s;
+  opacity: 0;
+}
+
+.card:hover::before {
+  left: 120%;
+  opacity: 1;
+}
+
+/* Hover animation */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(245, 197, 66, 0.3);
+}
+
+/* ===== Icon Box ===== */
+.iconBox {
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 10px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 25px rgba(245, 197, 66, 0.4);
+}
+
+/* ===== Text Section ===== */
+.textBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.textBox p {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.9;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 950px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card {
+    max-width: 600px;
+    justify-content: flex-start;
+    min-height: 150px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+    min-height: auto;
+  }
+
+  .iconBox {
+    width: 48px;
+    height: 48px;
+  }
+
+  .textBox h3 {
+    font-size: 1.2rem;
+  }
+
+  .textBox p {
+    font-size: 0.95rem;
+  }
+}
+
+
+

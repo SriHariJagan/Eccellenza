@@ -1,0 +1,199 @@
+/* ===================== Gallery Section ===================== */
+.galleryWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, var(--bg-section), var(--bg-body));
+  color: var(--text-primary);
+  padding: 1rem 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===================== Heading ===================== */
+.heading {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  border-bottom: 2px solid var(--border-glass);
+  padding-bottom: 0.6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ===================== Category Buttons ===================== */
+.categoryButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.categoryButton {
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--gold);
+  background: var(--bg-glass);
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: var(--glass-blur);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+}
+
+.categoryButton:hover,
+.categoryButton.active {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--border-hover);
+  box-shadow: 0 6px 20px var(--shadow-accent);
+  transform: translateY(-3px);
+}
+
+/* ===================== Gallery Grid ===================== */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* ===================== Gallery Card ===================== */
+.galleryCard {
+  position: relative;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-top-left-radius: var(--glass-radius);
+  border-top-right-radius: var(--glass-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px var(--shadow-dark);
+  backdrop-filter: var(--glass-blur);
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.galleryCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--border-hover);
+  box-shadow: 0 0 12px 2px var(--shadow-accent);
+}
+
+/* ===================== Image Wrapper ===================== */
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* ===================== Image Info ===================== */
+.imageInfo {
+  padding: .5rem 1rem;
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--border-glass);
+  transition: background 0.3s ease;
+}
+
+.imageTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  /* margin-bottom: 0.2rem; */
+  letter-spacing: 0.3px;
+  padding: 0;
+}
+
+.imageCategory {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ===================== Hover Glow ===================== */
+.galleryCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, transparent 70%, var(--gold) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.galleryCard:hover::before {
+  opacity: 0.15;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 900px) {
+  .galleryWrapper {
+    padding: 1rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .categoryButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .galleryGrid {
+    gap: 1.5rem;
+  }
+
+  .galleryCard {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryWrapper {
+    padding: 1rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .categoryButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .galleryGrid {
+    gap: 1.2rem;
+  }
+
+  .imageTitle {
+    font-size: 1rem;
+  }
+
+  .imageCategory {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,155 @@
+/* ===================== CLIENTS SECTION ===================== */
+.clientsSection {
+  position: relative;
+  padding: 4rem 0;
+  padding-bottom: 0;
+  background: var(--hero-gradient-start);
+  overflow: hidden;
+  text-align: center;
+}
+
+
+/* ===== Heading ===== */
+.heading {
+  position: relative;
+  z-index: 2;
+  color: var(--text-primary);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px var(--shadow-soft);
+  margin-bottom: 3rem;
+}
+
+.heading span {
+  color: var(--gold);
+}
+
+/* ===== Container ===== */
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+}
+
+/* ===== Scroll Animation Container ===== */
+.scrollContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: max-content;
+  padding: 2rem;
+}
+
+/* ===== Client Card ===== */
+.clientCard {
+  position: relative;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--glass-radius);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 4px 0.5px var(--shadow-dark);
+  padding: 1rem 2rem;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  width: 150px;
+}
+
+/* ===== Hover Effects ===== */
+.clientCard:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 30px var(--shadow-accent), 0 0 15px rgba(245, 197, 66, 0.25);
+  transform: translateY(-6px);
+}
+
+/* ===== Shine Animation ===== */
+.clientCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-15deg);
+  transition: 0.7s;
+  opacity: 0;
+}
+
+.clientCard:hover::before {
+  left: 120%;
+  opacity: 1;
+}
+
+/* ===== Logo Image ===== */
+.clientCard img {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.05);
+  transition: all 0.4s ease;
+}
+
+/* ===== Hover on Logo ===== */
+.clientCard:hover img {
+  filter: brightness(1.2);
+}
+
+/* ===== Dark Theme Visibility Fix ===== */
+[data-theme="dark"] .clientCard {
+  background: rgba(255, 255, 255, 0.08); /* Light translucent bg */
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .clientCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 20px rgba(245, 197, 66, 0.25);
+}
+
+[data-theme="dark"] .clientCard img {
+  filter: brightness(1.5) contrast(1.1);
+}
+
+/* Optional gold glow on hover in dark mode */
+[data-theme="dark"] .clientCard:hover img {
+  filter: brightness(1.7) drop-shadow(0 0 6px rgba(245, 197, 66, 0.4));
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .clientCard img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .clientsSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .scrollContainer {
+    gap: 2rem;
+  }
+
+  .clientCard {
+    padding: 1rem 2rem;
+  }
+
+  .clientCard img {
+    width: 120px;
+  }
+}

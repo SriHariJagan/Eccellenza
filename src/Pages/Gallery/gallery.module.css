@@ -1,0 +1,136 @@
+.galleryWrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem ;
+  background: radial-gradient(circle at top left, var(--bg-section), var(--bg-body));
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+  padding-bottom: 2rem;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--gold);
+  border-bottom: 2px solid var(--border-glass);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Category Buttons */
+.categoryButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.categoryButton {
+  padding: 0.6rem 1.3rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--gold);
+  background: var(--bg-glass);
+  color: var(--gold);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+  backdrop-filter: var(--glass-blur);
+  font-size: 0.95rem;
+}
+
+.categoryButton:hover {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 6px 20px var(--shadow-accent);
+  transform: translateY(-3px);
+}
+
+.active {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold-dark);
+}
+
+/* Album Section */
+.albumSection {
+  width: 100%;
+  /* max-width: 2000px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =================== RESPONSIVE DESIGN =================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .galleryWrapper {
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+  }
+
+  .categoryButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Large (600px–900px) */
+@media (max-width: 900px) {
+  .categoryButtons {
+    gap: 0.6rem;
+  }
+
+  .categoryButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .albumSection {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile Small (below 600px) */
+@media (max-width: 600px) {
+  .galleryWrapper {
+    padding: .5rem 0rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .categoryButtons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .categoryButton {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    border-width: 1px;
+  }
+
+  .albumSection {
+    padding: 0;
+  }
+}

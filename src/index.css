@@ -1,0 +1,193 @@
+/* ===================== Global Reset ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===================== LIGHT THEME ===================== */
+[data-theme="light"] {
+  /* Core Colors */
+  --gold: #f5c542;
+  --gold-dark: #e6b800;
+  --white: #ffffff;           /* Background white */
+  --gray-100: #555555;
+  --gray-200: #888888;
+  --gray-300: #bbbbbb;
+  --black: #1a1a1a;          /* Text dark */
+
+  /* Backgrounds */
+  --bg-body: #fefefe;
+  --bg-section: #ffffff;
+  --bg-glass: rgba(255,255,255,0.7);      /* Frosted glass effect */
+  --bg-glass-hover: rgba(245,197,66,0.12);
+  --bg-overlay: rgba(0,0,0,0.06);
+
+  /* Text */
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-accent: var(--gold);
+  --text-hover: #ffd633;
+  --text-muted: #888888;
+
+  /* Borders & Shadows */
+  --border-glass: rgba(0,0,0,0.1);
+  --border-hover: rgba(245,197,66,0.25);
+  --shadow-dark: rgba(0,0,0,0.15);
+  --shadow-soft: rgba(0,0,0,0.08);
+  --shadow-accent: rgba(245,197,66,0.2);
+
+  /* Buttons */
+  --btn-bg: linear-gradient(135deg, #f5c542, #ffdd55);
+  --btn-hover-bg: linear-gradient(135deg, #e6b800, #ffd633);
+  --btn-text: #000000;
+
+  /* Glass / Frost */
+  --glass-radius: 24px;
+  --glass-blur: blur(25px);
+  --glass-padding: 3rem;
+
+  /* Inputs / Forms */
+  --input-bg: rgba(0,0,0,0.04);
+  --input-border: rgba(0,0,0,0.15);
+  --input-focus: var(--gold);
+  --input-placeholder: rgba(0,0,0,0.45);
+
+  /* Icons / Links */
+  --icon-color: var(--gold);
+  --icon-hover: #000000;
+  --link-color: var(--gold);
+  --link-hover: #ffd633;
+
+  /* Hero / Background Effects */
+  --hero-gradient-start: #ffffff;
+  --hero-gradient-end: #fefefe;
+  --blur-effect: blur(120px);
+}
+
+/* ===================== DARK THEME ===================== */
+[data-theme="dark"] {
+  /* Core Colors */
+  --gold: #f5c542;
+  --gold-dark: #e6b800;
+  --white: #ffffff;          /* Text white */
+  --gray-100: #d1d1d1;
+  --gray-200: #a0a0a0;
+  --gray-300: #666666;
+  --black: #000000;          /* Background black */
+
+  /* Backgrounds */
+  --bg-body: #000000;             /* Main page bg: pure black */
+  --bg-section: #0d0d0d;          /* Cards, sections: near black */
+  --bg-glass: rgba(37, 36, 36, 0.64);   /* Frosted glass */
+  --bg-glass-hover: rgba(245,197,66,0.12);
+  --bg-overlay: rgba(0,0,0,0.7);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #d1d1d1;
+  --text-accent: var(--gold);
+  --text-hover: #ffd633;
+  --text-muted: #888888;
+
+  /* Borders & Shadows */
+  --border-glass: rgba(255,255,255,0.15);
+  --border-hover: rgba(245,197,66,0.3);
+  --shadow-dark: rgba(0,0,0,0.6);
+  --shadow-soft: rgba(0,0,0,0.3);
+  --shadow-accent: rgba(245,197,66,0.25);
+
+  /* Buttons */
+  --btn-bg: linear-gradient(135deg, #f5c542, #ffd633);
+  --btn-hover-bg: linear-gradient(135deg, #e6b800, #f5c542);
+  --btn-text: #000000; /* Black text looks good on gold buttons */
+
+  /* Glass / Frost */
+  --glass-radius: 24px;
+  --glass-blur: blur(35px);
+  --glass-padding: 3rem;
+
+  /* Inputs / Forms */
+  --input-bg: rgba(255,255,255,0.07);
+  --input-border: rgba(255,255,255,0.2);
+  --input-focus: var(--gold);
+  --input-placeholder: rgba(255,255,255,0.5);
+
+  /* Icons / Links */
+  --icon-color: var(--gold);
+  --icon-hover: #ffffff;
+  --link-color: var(--gold);
+  --link-hover: #ffd633;
+
+  /* Hero / Background Effects */
+  --hero-gradient-start: #000000;
+  --hero-gradient-end: #111111;
+  --blur-effect: blur(120px);
+}
+
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+  scroll-behavior: smooth;
+  background: radial-gradient(circle at top left, var(--bg-section), var(--bg-body));
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: var(--blur-effect);
+  z-index: 0;
+}
+
+body::before {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  /* background: radial-gradient(circle, var(--gold), transparent 70%); */
+}
+
+body::after {
+  width: 450px;
+  height: 450px;
+  bottom: -150px;
+  right: -120px;
+  /* background: radial-gradient(circle, var(--gold), transparent 70%); */
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+p, span, a, li {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+
+
+
+.mainContent {
+  padding-top: 80px; /* enough to clear fixed navbar */
+}

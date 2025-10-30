@@ -1,0 +1,216 @@
+.servicesSection {
+  width: 100%;
+  padding: 4rem 1rem;
+  background: linear-gradient(
+    120deg,
+    var(--hero-gradient-start),
+    var(--hero-gradient-end)
+  );
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  text-align: center;
+}
+
+.heading {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  border-bottom: 2px solid var(--border-glass);
+  padding-bottom: 0.6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Scrollable Container ===== */
+.scrollContainer {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+/* ===== Service Card ===== */
+.serviceCard {
+  position: relative;
+  width: 250px;
+  height: 190px;
+  border-radius: 18px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 6px 20px var(--shadow-soft);
+  overflow: hidden;
+  backdrop-filter: var(--glass-blur);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* Shine effect */
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 3;
+}
+
+/* ===== Background Image Layer ===== */
+.cardBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 0;
+}
+
+/* ===== Dark Glass Overlay ===== */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(.2px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.serviceCard:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px var(--shadow-accent);
+  border-color: var(--border-hover);
+}
+
+.serviceCard:hover .cardBg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.serviceCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+  animation: shineSweep 1.4s ease-in-out;
+}
+
+/* ===== Text Overlay ===== */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Outline Number */
+.cardNumber {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--gold);
+  text-stroke: 2px var(--gold);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+/* Title Text */
+.title {
+  position: relative;
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  z-index: 2;
+  max-width: 90%;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+/* Hover — make number and title glow softly */
+
+.serviceCard:hover .cardNumber {
+  -webkit-text-stroke: 1px wheat;
+  color: transparent;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+
+.serviceCard:hover .title {
+  color: var(--gold);
+}
+
+/* Shine animation */
+@keyframes shineSweep {
+  0% {
+    left: -75%;
+  }
+  60% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .serviceCard {
+    width: 210px;
+    height: 165px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 3rem 1rem;
+  }
+
+  .scrollContainer {
+    gap: 1.2rem;
+  }
+
+  .serviceCard {
+    width: 160px;
+    height: 140px;
+  }
+
+  .cardNumber {
+    font-size: 1.6rem;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+}
