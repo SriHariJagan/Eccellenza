@@ -15,7 +15,7 @@ const services = [
 const HomeServices = () => {
   return (
     <section className={styles.servicesSection}>
-      <h2 className={styles.heading}>Our Core Services</h2>
+      <h2 className={styles.heading}>Our Services</h2>
 
       <div className={styles.container}>
         <motion.div

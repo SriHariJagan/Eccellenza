@@ -1,0 +1,104 @@
+.ourTeam {
+  padding: 3rem 2rem;
+  /* background: var(--bg-section); */
+  color: var(--text-primary);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.heading {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  border-bottom: 2px solid var(--border-glass);
+  padding-bottom: 0.6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* === Team Card === */
+.card {
+  width: 100%;
+  max-width: 340px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 8px 24px var(--shadow-soft);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  box-shadow: 0 0 4px .1px var(--shadow-accent);
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+}
+
+.media {
+  height: 240px;
+  background: var(--bg-overlay);
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .photo {
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.name {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.line {
+  width: 40%;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 0.6rem auto;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+
+@media (max-width: 500px){
+  .ourTeam{
+    padding: 3rem 1rem;
+  }
+}

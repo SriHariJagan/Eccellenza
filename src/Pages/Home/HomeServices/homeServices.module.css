@@ -29,8 +29,6 @@
   padding-bottom: 0.6rem;
   margin-bottom: 3rem;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /* ===== Scrollable Container ===== */
@@ -96,7 +94,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(.2px);
+  backdrop-filter: blur(0.2px);
   opacity: 0;
   transition: opacity 0.6s ease;
   z-index: 1;
@@ -166,7 +164,6 @@
   transition: all 0.3s ease;
 }
 
-
 .serviceCard:hover .title {
   color: var(--gold);
 }
@@ -206,11 +203,21 @@
     height: 140px;
   }
 
+  .heading {
+    font-size: 1.8rem;
+  }
+
   .cardNumber {
     font-size: 1.6rem;
   }
 
   .title {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 1.6rem;
   }
 }

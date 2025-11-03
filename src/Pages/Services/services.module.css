@@ -214,15 +214,26 @@
   }
 
   .servicesWrapper {
-    padding: 0rem .5rem;
-    padding-bottom: 2rem;
+    padding: 1.5rem .5rem;
   }
 
-  .scrollSection {
-    padding: .8rem;
+  .scrollSection { 
+    padding: .8rem !important;
   }
 
   .heroImageWrapper{
     display: none;
   }
+
+
+  .scrollSection {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 2rem;
+  backdrop-filter: none;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 }

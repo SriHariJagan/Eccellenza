@@ -275,6 +275,20 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
+.mobileNavLink {
+  transition: all 0.3s ease;
+}
+
+
+/* Active link (current route) */
+.mobileNavLink.active {
+  background: var(--gold);
+  color: var(--black);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
 /* ===================== Responsive ===================== */
 @media (max-width: 808px) {
   .navLinks {
@@ -295,8 +309,25 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .navbar {
-    height: 60px;
-  }
+  position: fixed;
+  top: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur) saturate(180%);
+  border: 1px solid var(--border-glass);
+  border-radius: 0;
+  box-shadow: 0 8px 30px var(--shadow-soft);
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
 }

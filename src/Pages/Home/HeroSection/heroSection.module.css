@@ -362,8 +362,21 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .imageContent{
         padding-top: 0;
+    }
+
+    .thumbnailContainer {
+      max-width: 95%;
+    }
+}
+
+
+@media (max-width: 400px) {
+  .thumbnailContainer {
+      max-width: 98%;
+      gap: .2rem;
+      padding: .2rem ;
     }
 }

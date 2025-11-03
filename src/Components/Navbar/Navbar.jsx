@@ -22,7 +22,6 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRefs = useRef([]);
 
-
   const navItems = [
     { path: "/", label: "Home", icon: <Home size={18} /> },
     { path: "/about", label: "About", icon: <Info size={18} /> },
@@ -112,7 +111,9 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.path}
-              className={styles.mobileNavLink}
+              className={`${styles.mobileNavLink} ${
+                location.pathname === item.path ? styles.active : ""
+              }`}
               onClick={() => setMenuOpen(false)}
             >
               {item.icon} {item.label}

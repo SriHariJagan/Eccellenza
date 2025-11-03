@@ -65,7 +65,6 @@
 /* Album Section */
 .albumSection {
   width: 100%;
-  /* max-width: 2000px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +75,7 @@
 /* Tablets */
 @media (max-width: 1024px) {
   .galleryWrapper {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
   }
 
   .heading {
@@ -122,6 +121,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.4rem;
+    margin-bottom: 1.5rem;
   }
 
   .categoryButton {

@@ -1,6 +1,8 @@
 import React from "react";
 import { Users, Building2, Briefcase, HardHat, Rocket } from "lucide-react"; // 👈 icons
 import styles from "./about.module.css";
+import OurTeam from "../../Components/OurTeam/OurTeam";
+import VisionMission from "../Home/VisionMission/VisionMission";
 
 const About = () => {
   return (
@@ -95,6 +97,10 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <VisionMission />
+
+      <OurTeam />
     </section>
   );
 };
