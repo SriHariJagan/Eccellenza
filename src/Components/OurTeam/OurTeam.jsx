@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./OurTeam.module.css";
+import styles from "./ourTeam.module.css";
 
 const TeamCard = ({ photo, name, role, desc }) => (
   <article className={styles.card}>
