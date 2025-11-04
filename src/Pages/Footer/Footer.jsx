@@ -15,6 +15,7 @@ import {
   BarChart2,
   PenTool,
 } from "lucide-react";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -36,25 +37,28 @@ const Footer = () => {
 
           <div className={styles.social}>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/eccellenza-infra/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/eccellenzainfra"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter />
+              <FaXTwitter />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/eccellenzainfra.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram />
+            </a>
+            <a href="https://www.facebook.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
             </a>
           </div>
 

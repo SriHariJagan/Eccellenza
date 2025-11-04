@@ -7,6 +7,7 @@ const clientLogos = [
   "/Images/clients/2.png",
   "/Images/clients/3.png",
   "/Images/clients/4.png",
+  "/Images/clients/5.png",
   "/Images/clients/6.png",
   "/Images/clients/7.png",
   "/Images/clients/8.png",
@@ -14,10 +15,13 @@ const clientLogos = [
   "/Images/clients/10.png",
   "/Images/clients/11.png",
   "/Images/clients/12.png",
+  "/Images/clients/13.png",
   "/Images/clients/14.png",    
   "/Images/clients/15.png",    
   "/Images/clients/16.png",    
   "/Images/clients/17.png",    
+  "/Images/clients/18.png",    
+  "/Images/clients/19.png",    
 ];
 
 const ClientsSection = () => {

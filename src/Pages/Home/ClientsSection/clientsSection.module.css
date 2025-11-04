@@ -58,6 +58,7 @@
   cursor: pointer;
   overflow: hidden;
   width: 150px;
+  max-height: 80px;
 }
 
 /* ===== Hover Effects ===== */

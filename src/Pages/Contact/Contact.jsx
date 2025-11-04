@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./contact.module.css";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   return (
@@ -63,14 +64,17 @@ const Contact = () => {
 
         {/* Social Icons */}
         <div className={styles.socialBar}>
-          <a href="#">
-            <FaFacebookF />
-          </a>
-          <a href="#">
-            <FaTwitter />
-          </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/eccellenza-infra" target="_blank" rel="noopener noreferrer">
             <FaLinkedinIn />
+          </a>
+          <a href="https://x.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter />
+          </a>
+          <a href="https://www.instagram.com/eccellenzainfra.in" target="_blank" rel="noopener noreferrer">
+            <Instagram />
+          </a>
+           <a href="https://www.facebook.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
+            <FaFacebookF />
           </a>
         </div>
       </div>
