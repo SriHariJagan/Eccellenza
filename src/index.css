@@ -147,21 +147,6 @@ body::after {
   z-index: 0;
 }
 
-/* body::before {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  left: -100px;
-  background: radial-gradient(circle, var(--gold), transparent 70%);
-}
-
-body::after {
-  width: 450px;
-  height: 450px;
-  bottom: -150px;
-  right: -120px;
-  background: radial-gradient(circle, var(--gold), transparent 40%);
-} */
 
 h1,
 h2,

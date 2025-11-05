@@ -15,11 +15,22 @@ const Services = lazy(() => import("./Pages/Services/Services"));
 const App = () => {
   return (
     <>
-      <Suspense fallback={<div className="loading"><span className="loading-text">Loading...</span></div>}>
-        <Navbar />
+      <Suspense
+        fallback={
+          <div className="loading" role="status" aria-live="polite">
+            <span className="loading-text">Loading...</span>
+          </div>
+        }
+      >
+        {/* ✅ Navigation landmark */}
+        <header>
+          <Navbar />
+        </header>
+
         <ScrollToTop />
-        <div className="mainContent">
-          {/* Suspense shows fallback while components load */}
+
+        {/* ✅ Main landmark helps screen readers */}
+        <main id="main-content" role="main" tabIndex="-1" className="mainContent">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -28,8 +39,12 @@ const App = () => {
             <Route path="/projects" element={<Portfolio />} />
             <Route path="/services" element={<Services />} />
           </Routes>
+        </main>
+
+        {/* ✅ Footer landmark */}
+        <footer>
           <Footer />
-        </div>
+        </footer>
       </Suspense>
     </>
   );

@@ -26,15 +26,15 @@ const Navbar = () => {
     { path: "/", label: "Home", icon: <Home size={18} /> },
     { path: "/about", label: "About", icon: <Info size={18} /> },
     { path: "/services", label: "Services", icon: <Briefcase size={18} /> },
-    { path: "/projects", label: "Projects", icon: <FolderKanban size={18} /> }, // 🏗️ New Projects Page
-    { path: "/gallery", label: "Gallery", icon: <Image size={18} /> }, // 🖼️ New Gallery Page
+    { path: "/projects", label: "Projects", icon: <FolderKanban size={18} /> },
+    { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
     { path: "/contact", label: "Contact", icon: <Phone size={18} /> },
   ];
 
   useEffect(() => {
     const index = navItems.findIndex((item) => item.path === location.pathname);
     setActiveIndex(index !== -1 ? index : 0);
-    setMenuOpen(false); // close mobile menu on route change
+    setMenuOpen(false);
   }, [location.pathname]);
 
   return (
@@ -45,7 +45,7 @@ const Navbar = () => {
           <Link to="/" className={styles.logoLink}>
             <img
               src="/Images/logo1.png"
-              alt="Logo"
+              alt="Eccellenza Infra Logo"
               className={styles.logoImage}
             />
           </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          {/* Moving box indicator */}
+          {/* Active indicator */}
           {navRefs.current[activeIndex] && (
             <span
               className={styles.navIndicator}
@@ -78,34 +78,54 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className={styles.actions}>
-          <button className={styles.themeToggle} onClick={toggleTheme}>
+          {/* 🌙 Theme Toggle - Accessible */}
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${
+              theme === "light" ? "dark" : "light"
+            } theme`}
+            title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+          >
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
           </button>
 
-          {/* ✅ Hamburger Button for Mobile */}
+          {/* ☰ Mobile Menu Open - Accessible */}
           <button
             className={styles.mobileMenuButton}
             onClick={() => setMenuOpen(true)}
+            aria-label="Open mobile menu"
+            title="Open mobile menu"
           >
             <Menu size={24} />
           </button>
         </div>
       </nav>
 
-      {/* ✅ Mobile Overlay */}
+      {/* Mobile Overlay */}
       <div
         className={`${styles.mobileOverlay} ${menuOpen ? styles.active : ""}`}
         onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
       ></div>
 
-      {/* ✅ Mobile Slide Menu */}
-      <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}>
+      {/* Mobile Slide Menu */}
+      <div
+        className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
+      >
+        {/* ❌ Close Button - Accessible */}
         <button
           className={styles.mobileCloseButton}
           onClick={() => setMenuOpen(false)}
+          aria-label="Close mobile menu"
+          title="Close mobile menu"
         >
           <X size={26} />
         </button>
+
         <div className={styles.mobileMenuContent}>
           {navItems.map((item, index) => (
             <Link
