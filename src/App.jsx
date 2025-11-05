@@ -1,32 +1,36 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
-import Contact from "./Pages/Contact/Contact";
 import ScrollToTop from "./Utils/ScrollToTop";
-import Gallery from "./Pages/Gallery/Gallery";
-import Portfolio from "./Pages/Portfolio/Portfoilo";
-import Services from "./Pages/Services/Services";
-import About from "./Pages/About/About";
-import Home from "./Pages/Home/Home";
+
+// ✅ Lazy-loaded pages
+const Home = lazy(() => import("./Pages/Home/Home"));
+const About = lazy(() => import("./Pages/About/About"));
+const Contact = lazy(() => import("./Pages/Contact/Contact"));
+const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
+const Portfolio = lazy(() => import("./Pages/Portfolio/Portfoilo"));
+const Services = lazy(() => import("./Pages/Services/Services"));
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <ScrollToTop />
-      <div className="mainContent">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/projects" element={<Portfolio />} />
-          <Route path="/services" element={<Services />} />
-          {/* other routes */}
-        </Routes>
-        <Footer />
-      </div>
+      <Suspense fallback={<div className="loading"><span className="loading-text">Loading...</span></div>}>
+        <Navbar />
+        <ScrollToTop />
+        <div className="mainContent">
+          {/* Suspense shows fallback while components load */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/projects" element={<Portfolio />} />
+            <Route path="/services" element={<Services />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Suspense>
     </>
   );
 };
