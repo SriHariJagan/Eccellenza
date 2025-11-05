@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import {
-  Linkedin,
-  Twitter,
-  Instagram,
   MapPin,
   Phone,
   Mail,
@@ -15,11 +12,12 @@ import {
   BarChart2,
   PenTool,
 } from "lucide-react";
-import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
         {/* About Section */}
         <div className={styles.column}>
@@ -31,39 +29,50 @@ const Footer = () => {
           </a>
           <p>
             Eccellenza Infra Build Pvt. Ltd. is a young company with a dynamic
-            team of professionals who have been associated with Fit-out &
-            Interior Industry for over a decade.
+            team of professionals who have been associated with Fit-out & Interior
+            Industry for over a decade.
           </p>
 
           <div className={styles.social}>
             <a
-              href="https://www.linkedin.com/company/eccellenza-infra/"
+              href="https://www.linkedin.com/company/eccellenza-infra"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Eccellenza Infra on LinkedIn"
             >
-              <Linkedin />
+              <FaLinkedinIn size={20} aria-hidden="true" />
             </a>
+
             <a
               href="https://x.com/eccellenzainfra"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Eccellenza Infra on X (Twitter)"
             >
-              <FaXTwitter />
+              <FaXTwitter size={20} aria-hidden="true" />
             </a>
+
             <a
-              href="https://www.instagram.com/eccellenzainfra.in/"
+              href="https://www.instagram.com/eccellenzainfra.in"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Eccellenza Infra on Instagram"
             >
-              <Instagram />
+              <Instagram size={20} aria-hidden="true" />
             </a>
-            <a href="https://www.facebook.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF />
+
+            <a
+              href="https://www.facebook.com/eccellenzainfra"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Eccellenza Infra on Facebook"
+            >
+              <Facebook size={20} aria-hidden="true" />
             </a>
           </div>
 
           <div className={styles.offices}>
-            <h4>Our Offices</h4>
+            <h3>Our Offices</h3>
             <p>
               <MapPin /> Gurugram (Head office)
             </p>
@@ -78,7 +87,7 @@ const Footer = () => {
 
         {/* Our Services */}
         <div className={styles.column}>
-          <h3>Our Services</h3>
+          <h2>Our Services</h2>
           <ul>
             <li>
               <ClipboardCheck /> Project Management Consultancy
@@ -106,7 +115,7 @@ const Footer = () => {
 
         {/* Useful Links */}
         <div className={styles.column}>
-          <h3>Useful Links</h3>
+          <h2>Useful Links</h2>
           <ul className={styles.usefulLinks}>
             <li>
               <ChevronRight /> <a href="/">Home</a>
@@ -130,9 +139,8 @@ const Footer = () => {
         </div>
 
         {/* Contact Section */}
-        {/* Contact Section */}
         <div className={styles.column}>
-          <h3>Contact Us</h3>
+          <h2>Contact Us</h2>
 
           <div className={styles.contactItem}>
             <div className={styles.iconWrapper}>
@@ -192,8 +200,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.bottomBar}>
-        © {new Date().getFullYear()} Eccellenza Infra Build Pvt. Ltd. · All
-        Rights Reserved
+        © {new Date().getFullYear()} Eccellenza Infra Build Pvt. Ltd. · All Rights Reserved
       </div>
     </footer>
   );

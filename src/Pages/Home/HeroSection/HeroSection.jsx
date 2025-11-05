@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Instagram, Facebook } from "lucide-react";
 import styles from "./heroSection.module.css";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { Instagram, Facebook } from "lucide-react";
+
 
 const imageList = [
   "https://blog.buyerselect.com/wp-content/uploads/2024/05/organic-modern-interior-design.jpg",
@@ -46,32 +47,36 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/company/eccellenza-infra"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Eccellenza Infra on LinkedIn"
               >
-                <FaLinkedinIn size={20} />
+                <FaLinkedinIn size={20} aria-hidden="true" />
               </a>
 
               <a
                 href="https://x.com/eccellenzainfra"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Eccellenza Infra on X (Twitter)"
               >
-                <FaXTwitter size={20} />
+                <FaXTwitter size={20} aria-hidden="true" />
               </a>
 
               <a
                 href="https://www.instagram.com/eccellenzainfra.in"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Eccellenza Infra on Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={20} aria-hidden="true" />
               </a>
 
               <a
                 href="https://www.facebook.com/eccellenzainfra"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Eccellenza Infra on Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={20} aria-hidden="true" />
               </a>
             </div>
           </div>

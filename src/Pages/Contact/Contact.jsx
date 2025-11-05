@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./contact.module.css";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -64,17 +64,40 @@ const Contact = () => {
 
         {/* Social Icons */}
         <div className={styles.socialBar}>
-          <a href="https://www.linkedin.com/company/eccellenza-infra" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn />
+          <a
+            href="https://www.linkedin.com/company/eccellenza-infra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eccellenza Infra on LinkedIn"
+          >
+            <FaLinkedinIn size={20} aria-hidden="true" />
           </a>
-          <a href="https://x.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
-            <FaXTwitter />
+
+          <a
+            href="https://x.com/eccellenzainfra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eccellenza Infra on X (Twitter)"
+          >
+            <FaXTwitter size={20} aria-hidden="true" />
           </a>
-          <a href="https://www.instagram.com/eccellenzainfra.in" target="_blank" rel="noopener noreferrer">
-            <Instagram />
+
+          <a
+            href="https://www.instagram.com/eccellenzainfra.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eccellenza Infra on Instagram"
+          >
+            <Instagram size={20} aria-hidden="true" />
           </a>
-           <a href="https://www.facebook.com/eccellenzainfra" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF />
+
+          <a
+            href="https://www.facebook.com/eccellenzainfra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eccellenza Infra on Facebook"
+          >
+            <Facebook size={20} aria-hidden="true" />
           </a>
         </div>
       </div>
