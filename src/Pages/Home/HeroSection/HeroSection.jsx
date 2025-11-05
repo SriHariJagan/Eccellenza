@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import styles from "./heroSection.module.css";
 import { Link } from "react-router-dom";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 const imageList = [
   "https://blog.buyerselect.com/wp-content/uploads/2024/05/organic-modern-interior-design.jpg",
@@ -42,19 +43,35 @@ const HeroSection = () => {
           <div className={styles.socials}>
             <div className={styles.icons}>
               <a
-                target="_blank"
                 href="https://www.linkedin.com/company/eccellenza-infra"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
                 target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn size={20} />
+              </a>
+
+              <a
+                href="https://x.com/eccellenzainfra"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaXTwitter size={20} />
+              </a>
+
+              <a
                 href="https://www.instagram.com/eccellenzainfra.in"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Instagram size={20} />
               </a>
-              <a target="_blank" href="https://x.com/eccellenzainfra">
-                <Twitter size={20} />
+
+              <a
+                href="https://www.facebook.com/eccellenzainfra"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook size={20} />
               </a>
             </div>
           </div>
