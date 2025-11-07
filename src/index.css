@@ -127,6 +127,12 @@
   --blur-effect: blur(120px);
 }
 
+html.lg-on,
+body.lg-on {
+  overflow: hidden !important;
+}
+
+
 body {
   background-color: var(--hero-gradient-start);
 

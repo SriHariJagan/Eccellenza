@@ -9,8 +9,10 @@ const Home = lazy(() => import("./Pages/Home/Home"));
 const About = lazy(() => import("./Pages/About/About"));
 const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
-const Portfolio = lazy(() => import("./Pages/Portfolio/Portfoilo"));
+// const Portfolio = lazy(() => import("./Pages/Portfolio/Portfoilo"));
+const Projects = lazy(() => import("./Pages/Projects/Projects"));
 const Services = lazy(() => import("./Pages/Services/Services"));
+const Carrer = lazy(() => import("./Pages/Career/Career"))
 
 const App = () => {
   return (
@@ -36,8 +38,9 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/projects" element={<Portfolio />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/career" element={<Carrer />} />
           </Routes>
         </main>
 

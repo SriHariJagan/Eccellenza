@@ -11,6 +11,7 @@ import {
   Briefcase,
   Image,
   FolderKanban,
+  UserCheck,
 } from "lucide-react";
 import styles from "./navbar.module.css";
 import { ThemeContext } from "../../Store/useContext";
@@ -28,6 +29,7 @@ const Navbar = () => {
     { path: "/services", label: "Services", icon: <Briefcase size={18} /> },
     { path: "/projects", label: "Projects", icon: <FolderKanban size={18} /> },
     { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
+    { path: "/career", label: "Career", icon: <UserCheck size={18} /> },
     { path: "/contact", label: "Contact", icon: <Phone size={18} /> },
   ];
 

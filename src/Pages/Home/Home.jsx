@@ -2,11 +2,10 @@ import React from 'react'
 import HeroSection from './HeroSection/HeroSection'
 import About from '../About/About'
 import HomeServices from './HomeServices/HomeServices'
-import Portfolio from '../Portfolio/Portfoilo'
 import OurWork from './OurWork/OurWork'
-import VisionMission from './VisionMission/VisionMission'
 import ClientsSection from './ClientsSection/ClientsSection'
 import Contact from '../Contact/Contact'
+import Projects from '../Projects/Projects'
 
 const Home = () => {
   return (
@@ -14,9 +13,8 @@ const Home = () => {
         <HeroSection />
         <About />
         <HomeServices />
-        <Portfolio />
+        <Projects />
         <OurWork />
-        {/* <VisionMission /> */}
         <ClientsSection />
         <Contact />
     </div>

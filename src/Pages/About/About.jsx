@@ -48,7 +48,7 @@ const About = () => {
         {/* ===================== IMAGE SECTION ===================== */}
         <div className={styles.imageContainer}>
           <img
-            src="/Images/aboutUs.png"
+            src="/Images/aboutUs.avif"
             alt="Eccellenza Infra Build Team"
             className={styles.image}
           />

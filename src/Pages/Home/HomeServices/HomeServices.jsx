@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import styles from "./homeServices.module.css";
 
 const services = [
-  { title: "Project Management Consultancy", img: "/Images/services/projectManagement.png" },
-  { title: "Design Consultancy", img: "/Images/services/designConsultancy.png" },
-  { title: "Design & Build", img: "/Images/services/builtDesign.png" },
-  { title: "Turnkey Projects", img: "/Images/services/turnkeyProject.png" },
-  { title: "Construction Work", img: "/Images/services/constructionwork.png" },
-  { title: "Audits & Budget Analysis", img: "/Images/services/audits.png" },
-  { title: "Infrastructure Analysis", img: "/Images/services/infrastructure.png" },
+  { title: "Project Management Consultancy", img: "/Images/services/projectManagement.avif" },
+  { title: "Design Consultancy", img: "/Images/services/designConsultancy.avif" },
+  { title: "Design & Build", img: "/Images/services/builtDesign.avif" },
+  { title: "Turnkey Projects", img: "/Images/services/turnkeyProject.avif" },
+  { title: "Construction Work", img: "/Images/services/constructionwork.avif" },
+  { title: "Audits & Budget Analysis", img: "/Images/services/audits.avif" },
+  { title: "Infrastructure Analysis", img: "/Images/services/infrastructure.avif" },
 ];
 
 const HomeServices = () => {

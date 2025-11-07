@@ -23,37 +23,37 @@ const Services = () => {
     {
       title: "Project Management Consultancy",
       desc: "Providing strategic leadership and expert coordination across all project phases — from initiation to completion. We ensure strict adherence to timelines, budgets, and quality benchmarks through proactive planning, risk assessment, and seamless stakeholder communication.",
-      img: "/Images/services/projectManagement.png",
+      img: "/Images/services/projectManagement.avif",
     },
     {
       title: "Design Consultancy",
       desc: "Combining innovation with functionality, our design consultancy transforms your vision into impactful spaces and structures. We focus on aesthetics, efficiency, and sustainability, delivering tailored solutions that reflect your goals and brand identity.",
-      img: "/Images/services/designConsultancy.png",
+      img: "/Images/services/designConsultancy.avif",
     },
     {
       title: "Design & Build",
       desc: "Offering an integrated approach to design and construction, we manage every aspect from concept to completion. Our design & build services ensure seamless collaboration, faster delivery, cost efficiency, and uncompromised quality — all under one roof.",
-      img: "/Images/services/builtDesign.png",
+      img: "/Images/services/builtDesign.avif",
     },
     {
       title: "Turnkey Projects",
       desc: "Delivering fully managed, end-to-end project solutions where every detail is meticulously handled — from planning and design to execution and final handover. Our turnkey service lets you focus on your vision while we handle the rest, ensuring a hassle-free experience.",
-      img: "/Images/services/turnkeyProject.png",
+      img: "/Images/services/turnkeyProject.avif",
     },
     {
       title: "Construction Work",
       desc: "Executing construction projects with precision, safety, and craftsmanship. From residential to commercial builds, we use advanced methodologies and high-quality materials to deliver durable structures that meet the highest industry standards.",
-      img: "/Images/services/constructionwork.png",
+      img: "/Images/services/constructionwork.avif",
     },
     {
       title: "Audits & Budget Analysis",
       desc: "Offering transparent, data-driven financial audits and cost assessments to optimize project resources. Our team provides detailed budgeting insights, risk evaluations, and value engineering strategies that drive cost efficiency without compromising quality.",
-      img: "/Images/services/audits.png",
+      img: "/Images/services/audits.avif",
     },
     {
       title: "Infrastructure Analysis",
       desc: "Providing in-depth evaluation of existing and planned infrastructure to ensure reliability, performance, and sustainability. We combine engineering expertise with cutting-edge analytics to deliver actionable insights for long-term infrastructure resilience.",
-      img: "/Images/services/infrastructure.png",
+      img: "/Images/services/infrastructure.avif",
     },
   ];
 
@@ -83,7 +83,7 @@ const Services = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <img
-            src="/Images/services/servicesOverview.jpg"
+            src="/Images/services/servicesOverview.avif"
             alt="Architecture overview"
             className={styles.heroImage}
           />
