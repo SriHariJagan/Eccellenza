@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, TrendingUp, Users, Star } from "lucide-react";
-import styles from "./Career.module.css";
+import styles from "./career.module.css";
 import CareerForm from "../../Components/CareerForm/CareerForm";
 
 // ===================== DATA =====================
