@@ -121,7 +121,7 @@ export const galleryImages = [
 
 export const projects = {
   Commercial: {
-    Banks: [
+    BFSI_Sector: [
       "/Images/gallery/bank/1.avif",
       "/Images/gallery/bank/2.avif",
       "/Images/gallery/bank/3.avif",
@@ -134,8 +134,6 @@ export const projects = {
       "/Images/gallery/bank/10.avif",
       "/Images/gallery/bank/11.avif",
       "/Images/gallery/bank/12.avif",
-    ],
-    Insurance: [
       "/Images/gallery/insurance/1.avif",
       "/Images/gallery/insurance/2.avif",
       "/Images/gallery/insurance/3.avif",

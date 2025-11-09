@@ -1,18 +1,21 @@
 export const formatTitle = (str) => {
   if (!str) return "";
 
-  // Insert space before capital letters & capitalize words
+  // 1️⃣ Replace underscores & camelCase with spaces
   const formatted = str
-    .replace(/([a-z])([A-Z])/g, "$1 $2")     // → "coWorkingSpaces" → "co Working Spaces"
-    .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2") // handle double capitals
-    .replace(/([a-zA-Z])([0-9])/g, "$1 $2")   // space before numbers if any
+    .replace(/_/g, " ") // Replace underscores
+    .replace(/([a-z])([A-Z])/g, "$1 $2") // coWorking → co Working
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2") // BFSISector → BFSI Sector
     .trim();
 
-  // Capitalize first letter of every word
+  // 2️⃣ Capitalize properly but preserve acronyms (e.g., BFSI)
   return formatted
     .split(" ")
-    .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    )
+    .map((word) => {
+      // Keep fully uppercase words (acronyms) untouched
+      if (word === word.toUpperCase() && word.length > 1) return word;
+      // Capitalize normal words
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
     .join(" ");
 };
