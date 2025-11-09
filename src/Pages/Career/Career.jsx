@@ -53,7 +53,7 @@ const Career = () => {
         >
           <h1>
             Build Inspiring Spaces. <br />
-            <span>Build Your Career at Eccellenzia.</span>
+            <span>Build Your Career at Eccellenza.</span>
           </h1>
         </motion.div>
       </section>
@@ -94,19 +94,19 @@ const Career = () => {
           Join Our Team
         </motion.h2>
         <p className={styles.formText}>
-          Fill out the form below to explore career opportunities with Eccellenzia.
+          Fill out the form below to explore career opportunities with Eccellenza.
         </p>
         <CareerForm />
       </section>
 
-      {/* ===== LIFE AT ECCELLENZIA ===== */}
+      {/* ===== LIFE AT ECCELLENZA ===== */}
       <section className={styles.lifeSection}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          Life at Eccellenzia
+          Life at Eccellenza
         </motion.h2>
 
         <div className={styles.lifeGrid}>

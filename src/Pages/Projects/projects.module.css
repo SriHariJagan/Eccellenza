@@ -199,10 +199,15 @@
   }
 
   .subTitle {
-    font-size: 1rem;
+    font-size: .95rem;
+  }
+
+  .mainCategory{
+    font-size: .8rem;
   }
 
   .imageInfo {
-    padding: 0.8rem 1rem;
+    flex-direction: column;
+    padding: 0.8rem .2rem;
   }
 }

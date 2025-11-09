@@ -1,148 +1,123 @@
 export const galleryImages = [
-  {
-    src: "/Images/gallery/bank.png",
+  // === Banks ===
+  ...[
+    "/Images/gallery/bank/1.avif",
+    "/Images/gallery/bank/2.avif",
+    "/Images/gallery/bank/3.avif",
+    "/Images/gallery/bank/4.avif",
+    "/Images/gallery/bank/5.avif",
+    "/Images/gallery/bank/6.avif",
+    "/Images/gallery/bank/7.avif",
+    "/Images/gallery/bank/8.avif",
+    "/Images/gallery/bank/9.avif",
+    "/Images/gallery/bank/10.avif",
+    "/Images/gallery/bank/11.avif",
+    "/Images/gallery/bank/12.avif",
+  ].map((src, i) => ({
+    src,
     width: 800,
     height: 600,
     category: "Bank",
-    name: "Modern Bank Branch",
-  },
-  {
-    src: "/Images/gallery/bank.png",
+    name: `Bank Project ${i + 1}`,
+  })),
+
+  // === Insurance ===
+  ...[
+    "/Images/gallery/insurance/1.avif",
+    "/Images/gallery/insurance/2.avif",
+    "/Images/gallery/insurance/3.avif",
+    "/Images/gallery/insurance/4.avif",
+    "/Images/gallery/insurance/5.avif",
+    "/Images/gallery/insurance/6.avif",
+    "/Images/gallery/insurance/7.avif",
+    "/Images/gallery/insurance/8.avif",
+    "/Images/gallery/insurance/9.avif",
+    "/Images/gallery/insurance/10.avif",
+    "/Images/gallery/insurance/11.avif",
+    "/Images/gallery/insurance/13.avif",
+    "/Images/gallery/insurance/14.avif",
+    "/Images/gallery/insurance/15.avif",
+    "/Images/gallery/insurance/16.avif",
+    "/Images/gallery/insurance/17.avif",
+    "/Images/gallery/insurance/18.avif",
+    "/Images/gallery/insurance/19.avif",
+    "/Images/gallery/insurance/20.avif",
+    "/Images/gallery/insurance/21.avif",
+    "/Images/gallery/insurance/22.avif",
+    "/Images/gallery/insurance/23.avif",
+    "/Images/gallery/insurance/24.avif",
+    "/Images/gallery/insurance/25.avif",
+  ].map((src, i) => ({
+    src,
     width: 800,
     height: 600,
-    category: "Bank",
-    name: "Corporate Bank Office",
-  },
-  {
-    src: "/Images/gallery/insurance.png",
-    width: 800,
-    height: 400,
     category: "Insurance",
-    name: "Insurance Headquarters",
-  },
-  {
-    src: "/Images/gallery/insurance.png",
+    name: `Insurance Project ${i + 1}`,
+  })),
+
+  // === Co-Working Spaces ===
+  ...[
+    "/Images/gallery/coworking/1.avif",
+    "/Images/gallery/coworking/2.avif",
+    "/Images/gallery/coworking/3.avif",
+    "/Images/gallery/coworking/4.avif",
+    "/Images/gallery/coworking/5.avif",
+    "/Images/gallery/coworking/6.avif",
+    "/Images/gallery/coworking/7.avif",
+    "/Images/gallery/coworking/8.avif",
+  ].map((src, i) => ({
+    src,
     width: 800,
     height: 600,
-    category: "Insurance",
-    name: "Insurance Office Space",
-  },
-  {
-    src: "/Images/gallery/residency.png",
+    category: "Co-working Space",
+    name: `Co-working Space ${i + 1}`,
+  })),
+
+  // === Corporate Offices ===
+  ...[
+    "/Images/gallery/office/1.avif",
+    "/Images/gallery/office/2.avif",
+    "/Images/gallery/office/3.avif",
+    "/Images/gallery/office/4.avif",
+    "/Images/gallery/office/5.avif",
+    "/Images/gallery/office/6.avif",
+    "/Images/gallery/office/7.avif",
+  ].map((src, i) => ({
+    src,
     width: 800,
     height: 600,
-    category: "Residency",
-    name: "Luxury Apartment",
-  },
-  {
-    src: "/Images/gallery/residency.png",
-    width: 800,
-    height: 300,
-    category: "Residency",
-    name: "Residential Tower",
-  },
-  {
-    src: "/Images/gallery/restaurant.png",
+    category: "Corporate Office",
+    name: `Corporate Office ${i + 1}`,
+  })),
+
+  // === Modular Kitchens ===
+  ...[
+    "/Images/gallery/kitchen/1.avif",
+    "/Images/gallery/kitchen/2.avif",
+    "/Images/gallery/kitchen/3.avif",
+    "/Images/gallery/kitchen/4.avif",
+    "/Images/gallery/kitchen/5.avif",
+  ].map((src, i) => ({
+    src,
     width: 800,
     height: 600,
-    category: "Restaurant",
-    name: "Fine Dining Restaurant",
-  },
-  {
-    src: "/Images/gallery/restaurant.png",
-    width: 200,
+    category: "Modular Kitchen",
+    name: `Kitchen Design ${i + 1}`,
+  })),
+
+  // === Residencies ===
+  ...[
+    "/Images/gallery/residency.png",
+    "/Images/gallery/restaurant.png",
+  ].map((src, i) => ({
+    src,
+    width: 800,
     height: 600,
-    category: "Restaurant",
-    name: "Cafe Interior",
-  },
+    category: "Residential",
+    name: `Residential Project ${i + 1}`,
+  })),
 ];
 
-export const projectsData = [
-  // ===== Offices =====
-  {
-    src: "/Images/gallery/bank.png",
-    width: 800,
-    height: 600,
-    category: "Offices",
-    name: "Corporate Office Interior",
-  },
-  {
-    src: "/Images/gallery/insurance.png",
-    width: 900,
-    height: 600,
-    category: "Offices",
-    name: "Executive Workspace Design",
-  },
-  {
-    src: "/Images/gallery/bank.png",
-    width: 800,
-    height: 500,
-    category: "Offices",
-    name: "Modern Co-working Office",
-  },
-
-  // ===== Residentials =====
-  {
-    src: "/Images/gallery/insurance.png",
-    width: 800,
-    height: 600,
-    category: "Residentials",
-    name: "Luxury Apartment Interior",
-  },
-  {
-    src: "/Images/gallery/restaurant.png",
-    width: 800,
-    height: 500,
-    category: "Residentials",
-    name: "Contemporary Villa Design",
-  },
-  {
-    src: "/Images/gallery/restaurant.png",
-    width: 800,
-    height: 600,
-    category: "Residentials",
-    name: "Urban Residence Living Room",
-  },
-
-  // ===== Restaurant =====
-  {
-    src: "/Images/gallery/residency.png",
-    width: 800,
-    height: 600,
-    category: "Restaurant",
-    name: "Fine Dining Restaurant Interior",
-  },
-  {
-    src: "/Images/gallery/residency.png",
-    width: 800,
-    height: 600,
-    category: "Restaurant",
-    name: "Casual Cafe & Lounge",
-  },
-
-  // ===== Retail =====
-  {
-    src: "/Images/gallery/bank.png",
-    width: 800,
-    height: 600,
-    category: "Retail",
-    name: "Fashion Store Interior",
-  },
-  {
-    src: "/Images/gallery/bank.png",
-    width: 800,
-    height: 600,
-    category: "Retail",
-    name: "Luxury Boutique Design",
-  },
-  {
-    src: "/Images/gallery/bank.png",
-    width: 800,
-    height: 600,
-    category: "Retail",
-    name: "Electronics Retail Outlet",
-  },
-];
 
 export const projects = {
   Commercial: {

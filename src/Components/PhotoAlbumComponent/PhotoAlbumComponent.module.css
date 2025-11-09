@@ -1,12 +1,10 @@
 .albumWrapper {
   width: 100%;
-  /* margin: 0.5rem auto; */
-  /* padding: 0 2rem; */
   display: flex;
   justify-content: center;
   color: var(--text-primary);
   font-family: "Inter", "Poppins", sans-serif;
-  /* transition: background 0.3s ease, color 0.3s ease; */
+  overflow: hidden;
 }
 
 /* ===== Gallery Grid ===== */
@@ -15,7 +13,6 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
   width: 100%;
-  /* max-width: 1300px; */
   background: var(--bg-glass);
   border-radius: var(--glass-radius);
   backdrop-filter: blur(20px) saturate(160%);
@@ -26,8 +23,7 @@
 }
 
 .galleryGrid:hover {
-  box-shadow: 0 0 20px var(--shadow-accent);
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--shadow-accent);
 }
 
 /* ===== Photo Cards ===== */
@@ -39,13 +35,14 @@
   border: 1px solid var(--border-glass);
   box-shadow: 0 8px 25px var(--shadow-soft);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, opacity;
 }
 
 .photoCard:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: var(--border-hover);
+  transform: translateY(-5px) scale(1.03);
   box-shadow: 0 12px 35px var(--shadow-accent);
+  border-color: var(--border-hover);
 }
 
 .photoImg {
@@ -53,15 +50,15 @@
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .photoCard:hover .photoImg {
-  transform: scale(1.06);
-  filter: brightness(1.08);
+  transform: scale(1.07);
+  filter: brightness(1.1);
 }
 
-/* ===== Overlay (Glassy Caption) ===== */
+/* ===== Overlay (Caption) ===== */
 .overlay {
   position: absolute;
   inset: 0;
@@ -80,15 +77,15 @@
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   font-size: clamp(0.9rem, 2vw, 1rem);
-  letter-spacing: 0.3px;
   text-align: center;
+  letter-spacing: 0.3px;
 }
 
 .photoCard:hover .overlay {
   opacity: 1;
 }
 
-/* ===== Light / Dark ===== */
+/* ===== Light / Dark Modes ===== */
 .light .photoCard {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -102,19 +99,14 @@
   .galleryGrid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     padding: 1.4rem;
-    gap: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .albumWrapper {
-    padding: 0 1.4rem;
-  }
-
   .galleryGrid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 1rem;
     gap: 0.8rem;
+    padding: 1rem;
   }
 
   .overlay span {
@@ -123,40 +115,17 @@
 }
 
 @media (max-width: 480px) {
-  .albumWrapper {
-    padding: 0 .5rem;
-  }
-
   .galleryGrid {
-    padding: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.6rem;
-    grid-template-columns: repeat(auto-fit, minmax(145px, 2fr));
+    padding: 0.8rem;
   }
 
   .photoCard {
     border-radius: 12px;
   }
 
-  .overlay {
-    padding: 0.6rem;
-  }
-
   .overlay span {
     font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .albumWrapper {
-    padding: 0 .2rem;
-  }
-
-  .galleryGrid {
-    padding: 0.6rem;
-    gap: 0.4rem;
-  }
-
-  .overlay span {
-    font-size: 0.75rem;
   }
 }

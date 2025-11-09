@@ -4,7 +4,11 @@ import { galleryImages } from "../../data";
 import styles from "./gallery.module.css";
 import PhotoAlbumComponent from "../../Components/PhotoAlbumComponent/PhotoAlbumComponent";
 
-const categories = ["All", "Bank", "Insurance", "Residency", "Restaurant"];
+// Dynamically extract categories from data
+const allCategories = [
+  "All",
+  ...Array.from(new Set(galleryImages.map((img) => img.category))).sort(),
+];
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -24,7 +28,7 @@ const Gallery = () => {
 
       {/* Category Buttons */}
       <div className={styles.categoryButtons}>
-        {categories.map((cat) => (
+        {allCategories.map((cat) => (
           <motion.button
             key={cat}
             whileHover={{ scale: 1.05 }}

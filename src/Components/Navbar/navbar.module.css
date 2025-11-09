@@ -198,7 +198,7 @@
   color: var(--text-primary);
   align-self: flex-end;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -262,6 +262,11 @@
 }
 .mobileMenu.open .mobileNavLink:nth-child(6) {
   transition-delay: 1s;
+  opacity: 1;
+  transform: translateX(0);
+}
+.mobileMenu.open .mobileNavLink:nth-child(7) {
+  transition-delay: 1.2s;
   opacity: 1;
   transform: translateX(0);
 }

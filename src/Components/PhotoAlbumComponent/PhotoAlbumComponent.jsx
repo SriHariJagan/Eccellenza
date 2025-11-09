@@ -2,12 +2,18 @@ import React, { useEffect, useMemo, useState } from "react";
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import { motion } from "framer-motion";
 
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
 import styles from "./PhotoAlbumComponent.module.css";
+
+const fadeUpVariant = {
+  hidden: { opacity: 0, scale: 0.95, y: 40 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const PhotoAlbumComponent = ({ photos = [] }) => {
   const [theme, setTheme] = useState(
@@ -39,14 +45,12 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
     [photos]
   );
 
-  // Disable scroll + hide navbar on open
   const handleGalleryOpen = () => {
     document.body.style.overflow = "hidden";
     const navbar = document.querySelector(".navbar");
     if (navbar) navbar.style.display = "none";
   };
 
-  // Restore scroll + show navbar on close
   const handleGalleryClose = () => {
     document.body.style.overflow = "";
     const navbar = document.querySelector(".navbar");
@@ -67,11 +71,15 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
         onBeforeClose={handleGalleryClose}
       >
         {formattedPhotos.map((photo, i) => (
-          <a
+          <motion.a
             key={i}
             href={photo.src}
             data-lg-size={`${photo.width}-${photo.height}`}
             className={styles.photoCard}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeUpVariant}
           >
             <img
               src={photo.src}
@@ -82,7 +90,7 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
             <div className={styles.overlay}>
               <span>{photo.alt}</span>
             </div>
-          </a>
+          </motion.a>
         ))}
       </LightGallery>
     </div>

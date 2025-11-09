@@ -1,36 +1,50 @@
-/* ===================== Global Reset ===================== */
+/* =====================================================
+   🌐 GLOBAL RESET & BASE STYLES
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-/* ===================== LIGHT THEME ===================== */
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =====================================================
+   🎨 LIGHT THEME
+===================================================== */
 [data-theme="light"] {
-  /* Core Colors */
   --gold: #f5c542;
   --gold-dark: #e6b800;
-  --white: #ffffff; /* Background white */
+  --white: #ffffff;
+  --black: #1a1a1a;
+
   --gray-100: #555555;
   --gray-200: #888888;
   --gray-300: #bbbbbb;
-  --black: #1a1a1a; /* Text dark */
 
   /* Backgrounds */
   --bg-body: #fefefe;
   --bg-section: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.7); /* Frosted glass effect */
+  --bg-glass: rgba(255, 255, 255, 0.7);
   --bg-glass-hover: rgba(245, 197, 66, 0.12);
   --bg-overlay: rgba(0, 0, 0, 0.06);
 
   /* Text */
-  --text-primary: #1a1a1a;
-  --text-secondary: #555555;
+  --text-primary: var(--black);
+  --text-secondary: var(--gray-100);
   --text-accent: var(--gold);
   --text-hover: #ffd633;
-  --text-muted: #888888;
+  --text-muted: var(--gray-200);
 
   /* Borders & Shadows */
   --border-glass: rgba(0, 0, 0, 0.1);
@@ -44,12 +58,7 @@
   --btn-hover-bg: linear-gradient(135deg, #e6b800, #ffd633);
   --btn-text: #000000;
 
-  /* Glass / Frost */
-  --glass-radius: 24px;
-  --glass-blur: blur(25px);
-  --glass-padding: 3rem;
-
-  /* Inputs / Forms */
+  /* Inputs */
   --input-bg: rgba(0, 0, 0, 0.04);
   --input-border: rgba(0, 0, 0, 0.15);
   --input-focus: var(--gold);
@@ -61,33 +70,39 @@
   --link-color: var(--gold);
   --link-hover: #ffd633;
 
-  /* Hero / Background Effects */
+  /* Effects */
   --hero-gradient-start: #ffffff;
   --hero-gradient-end: #fefefe;
   --blur-effect: blur(120px);
+
+  --glass-radius: 24px;
+  --glass-blur: blur(25px);
+  --glass-padding: 3rem;
 }
 
-/* ===================== DARK THEME ===================== */
+/* =====================================================
+   🌑 DARK THEME
+===================================================== */
 [data-theme="dark"] {
-  /* Core Colors */
   --gold: #f5c542;
   --gold-dark: #e6b800;
-  --white: #ffffff; /* Text white */
+  --white: #ffffff;
+  --black: #000000;
+
   --gray-100: #d1d1d1;
   --gray-200: #a0a0a0;
   --gray-300: #666666;
-  --black: #000000; /* Background black */
 
   /* Backgrounds */
-  --bg-body: #000000; /* Main page bg: pure black */
-  --bg-section: #0d0d0d; /* Cards, sections: near black */
-  --bg-glass: rgba(37, 36, 36, 0.64); /* Frosted glass */
+  --bg-body: #000000;
+  --bg-section: #0d0d0d;
+  --bg-glass: rgba(37, 36, 36, 0.64);
   --bg-glass-hover: rgba(245, 197, 66, 0.12);
   --bg-overlay: rgba(0, 0, 0, 0.7);
 
   /* Text */
   --text-primary: #ffffff;
-  --text-secondary: #d1d1d1;
+  --text-secondary: var(--gray-100);
   --text-accent: var(--gold);
   --text-hover: #ffd633;
   --text-muted: #888888;
@@ -102,14 +117,9 @@
   /* Buttons */
   --btn-bg: linear-gradient(135deg, #f5c542, #ffd633);
   --btn-hover-bg: linear-gradient(135deg, #e6b800, #f5c542);
-  --btn-text: #000000; /* Black text looks good on gold buttons */
+  --btn-text: #000000;
 
-  /* Glass / Frost */
-  --glass-radius: 24px;
-  --glass-blur: blur(35px);
-  --glass-padding: 3rem;
-
-  /* Inputs / Forms */
+  /* Inputs */
   --input-bg: rgba(255, 255, 255, 0.07);
   --input-border: rgba(255, 255, 255, 0.2);
   --input-focus: var(--gold);
@@ -121,39 +131,19 @@
   --link-color: var(--gold);
   --link-hover: #ffd633;
 
-  /* Hero / Background Effects */
+  /* Effects */
   --hero-gradient-start: #000000;
   --hero-gradient-end: #111111;
   --blur-effect: blur(120px);
+
+  --glass-radius: 24px;
+  --glass-blur: blur(35px);
+  --glass-padding: 3rem;
 }
 
-html.lg-on,
-body.lg-on {
-  overflow: hidden !important;
-}
-
-
-body {
-  background-color: var(--hero-gradient-start);
-
-  color: var(--text-primary);
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  transition: background 0.4s ease, color 0.4s ease;
-  scroll-behavior: smooth;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  border-radius: 50%;
-  filter: var(--blur-effect);
-  z-index: 0;
-}
-
-
+/* =====================================================
+   🧱 TYPOGRAPHY
+===================================================== */
 h1,
 h2,
 h3,
@@ -178,25 +168,25 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a:hover {
   color: var(--link-hover);
 }
 
+/* =====================================================
+   📱 RESPONSIVE SPACING
+===================================================== */
 .mainContent {
-  padding-top: 80px; /* enough to clear fixed navbar */
+  padding-top: 80px;
 }
-
 @media (max-width: 500px) {
   .mainContent {
-    padding-top: 60px; /* enough to clear fixed navbar */
+    padding-top: 60px;
   }
 }
 
-
-
-
-/* ===================== Loading Spinner ===================== */
+/* =====================================================
+   🔄 LOADING SPINNER
+===================================================== */
 .loading {
   position: fixed;
   top: 0;
@@ -242,6 +232,19 @@ a:hover {
 }
 
 @keyframes fadeInOut {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   🧊 LIGHTGALLERY FIX
+===================================================== */
+html.lg-on,
+body.lg-on {
+  overflow: hidden !important;
 }
