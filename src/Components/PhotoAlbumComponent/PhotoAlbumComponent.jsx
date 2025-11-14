@@ -3,7 +3,6 @@ import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { motion } from "framer-motion";
-
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -11,9 +10,14 @@ import "lightgallery/css/lg-thumbnail.css";
 import styles from "./PhotoAlbumComponent.module.css";
 
 const fadeUpVariant = {
-  hidden: { opacity: 0, scale: 0.95, y: 40 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
 };
+
 
 const PhotoAlbumComponent = ({ photos = [] }) => {
   const [theme, setTheme] = useState(
@@ -81,18 +85,33 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeUpVariant}
           >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              loading="lazy"
-              className={styles.photoImg}
-            />
+            <ImageWithLoader src={photo.src} alt={photo.alt} />
             <div className={styles.overlay}>
               <span>{photo.alt}</span>
             </div>
           </motion.a>
         ))}
       </LightGallery>
+    </div>
+  );
+};
+
+const ImageWithLoader = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={styles.imageWrapper}>
+      {!loaded && <div className={styles.skeletonLoader} />}
+      <motion.img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`${styles.photoImg} ${loaded ? styles.loaded : ""}`}
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={loaded ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      />
     </div>
   );
 };

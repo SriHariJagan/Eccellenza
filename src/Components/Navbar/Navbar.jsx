@@ -12,6 +12,7 @@ import {
   Image,
   FolderKanban,
   UserCheck,
+  BookOpenText,
 } from "lucide-react";
 import styles from "./navbar.module.css";
 import { ThemeContext } from "../../Store/useContext";
@@ -29,6 +30,7 @@ const Navbar = () => {
     { path: "/services", label: "Services", icon: <Briefcase size={18} /> },
     { path: "/projects", label: "Projects", icon: <FolderKanban size={18} /> },
     { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
+    { path: "/blogs", label: "Blogs", icon: <BookOpenText size={18} /> },
     { path: "/career", label: "Career", icon: <UserCheck size={18} /> },
     { path: "/contact", label: "Contact", icon: <Phone size={18} /> },
   ];
@@ -46,7 +48,12 @@ const Navbar = () => {
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink}>
             <img
-              src="/Images/logo1.png"
+              key={theme} // triggers smooth transition on theme change
+              src={
+                theme === "light"
+                  ? "/Images/logo1.png"
+                  : "/Images/darkLogo.png"
+              }
               alt="Eccellenza Infra Logo"
               className={styles.logoImage}
             />

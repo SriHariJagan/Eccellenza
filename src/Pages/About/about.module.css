@@ -95,8 +95,8 @@
 }
 
 .image:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 14px 40px var(--shadow-accent);
+  /* transform: translateY(-6px) scale(1.04); */
+  box-shadow: 0 2px 10px 2px var(--shadow-accent);
 }
 
 /* ===================== STATS SECTION ===================== */

@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
 import ScrollToTop from "./Utils/ScrollToTop";
+import Blogs from "./Pages/Blogs/Blogs";
+import BlogDetails from "./Components/BlogDetails/BlogDetails";
 
 // ✅ Lazy-loaded pages
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -41,6 +43,8 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Carrer />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<BlogDetails />} />
           </Routes>
         </main>
 

@@ -9,8 +9,10 @@
   position: relative;
   border-bottom: 1px solid var(--border-glass);
   box-shadow: 0 8px 40px var(--shadow-soft);
-  border-radius: 0 0 var(--glass-radius) var(--glass-radius);
+  /* border-radius: 0 0 var(--glass-radius) var(--glass-radius); */
   overflow: hidden;
+
+  top: -80px;
 }
 
 .heroSection::after {
@@ -48,7 +50,7 @@
 /* ===================== WHY CHOOSE US ===================== */
 .whyJoinUs {
   text-align: center;
-  padding: 5rem 2rem 3rem;
+  padding: 0rem 2rem 3rem;
   margin: 0 auto;
   max-width: 1300px;
 }
@@ -154,14 +156,14 @@
   max-width: 1400px;
   text-align: center;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .lifeSection h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 600;
   color: var(--text-accent);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .lifeGrid {
@@ -205,9 +207,9 @@
   right: 15px;
   background: rgba(30, 29, 29, 0.364);
   color: rgb(238, 251, 136);
-  padding: 0.6rem 1rem;
+  padding: 0.4rem .5rem;
   border-radius: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 0.3px;
   backdrop-filter: blur(3px);
 }
@@ -230,7 +232,8 @@
 
   .whyJoinUs,
   .lifeSection {
-    padding: 3rem 1.5rem;
+    padding: 0rem 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .cardGrid {
@@ -246,6 +249,7 @@
   .heroSection {
     height: 45vh;
     border-radius: 0;
+    top: 0px;
   }
 
   .heroContent h1 {
@@ -254,7 +258,7 @@
 
   .whyJoinUs,
   .lifeSection {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .card{

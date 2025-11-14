@@ -7,7 +7,7 @@ import PhotoAlbumComponent from "../../Components/PhotoAlbumComponent/PhotoAlbum
 // Dynamically extract categories from data
 const allCategories = [
   "All",
-  ...Array.from(new Set(galleryImages.map((img) => img.category))).sort(),
+  ...Array.from(new Set(galleryImages.map((img) => img.category))),
 ];
 
 const Gallery = () => {
@@ -44,13 +44,13 @@ const Gallery = () => {
       </div>
 
       {/* Animated Album Section */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={selectedCategory}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           className={styles.albumSection}
         >
           <PhotoAlbumComponent photos={filteredImages} />

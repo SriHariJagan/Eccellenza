@@ -29,14 +29,14 @@ const whyJoinData = [
 ];
 
 const lifeData = [
-  { img: "/Images/services/audits.avif", title: "Collaborative Design Sessions" },
-  { img: "/Images/services/audits.avif", title: "Our Inspiring Workspaces" },
-  { img: "/Images/services/audits.avif", title: "Brainstorming New Concepts" },
-  { img: "/Images/services/audits.avif", title: "Precision in Every Detail" },
-  { img: "/Images/services/audits.avif", title: "Teamwork Makes the Dream Work" },
-  { img: "/Images/services/audits.avif", title: "Driving Architectural Innovation" },
-  { img: "/Images/services/audits.avif", title: "Moments of Recharge" },
-  { img: "/Images/services/audits.avif", title: "Presenting Vision to Clients" },
+  { img: "/Images/Career/1.webp", title: "Collaborative Design Sessions" },
+  { img: "/Images/Career/2.webp", title: "Our Inspiring Workspaces" },
+  { img: "/Images/Career/3.webp", title: "Brainstorming New Concepts" },
+  { img: "/Images/Career/4.webp", title: "Precision in Every Detail" },
+  { img: "/Images/Career/5.webp", title: "Teamwork Makes the Dream Work" },
+  { img: "/Images/Career/6.webp", title: "Driving Architectural Innovation" },
+  { img: "/Images/Career/7.webp", title: "Moments of Recharge" },
+  { img: "/Images/Career/8.webp", title: "Presenting Vision to Clients" },
 ];
 
 // ===================== COMPONENT =====================

@@ -17,7 +17,7 @@ const Contact = () => {
             <input type="email" placeholder="Enter your email address" />
             <textarea
               placeholder="Go ahead, we are listening..."
-              rows="10"
+              rows="2"
             ></textarea>
             <button type="submit">Submit</button>
           </form>
@@ -50,10 +50,10 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className={styles.infoItem}>
+            {/* <div className={styles.infoItem}>
               <Phone className={styles.icon} />
               <p>+91 9999841336, +91 9717741336</p>
-            </div>
+            </div> */}
 
             <div className={styles.infoItem}>
               <Mail className={styles.icon} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Footer.module.css";
 import {
   MapPin,
@@ -14,8 +14,10 @@ import {
 } from "lucide-react";
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { Instagram, Facebook } from "lucide-react";
+import { ThemeContext } from "../../Store/useContext";
 
 const Footer = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
@@ -23,8 +25,14 @@ const Footer = () => {
         <div className={styles.column}>
           <a href="/" className={styles.logoLink}>
             <img
-              src="/Images/logo1.png"
-              alt="Eccellenza Infra Build Pvt. Ltd."
+              key={theme} // triggers smooth transition on theme change
+              src={
+                theme === "light"
+                  ? "/Images/logo1.png"
+                  : "/Images/darkLogo.png"
+              }
+              alt="Eccellenza Infra Logo"
+              className={styles.logoImage}
             />
           </a>
           <p>
@@ -133,6 +141,12 @@ const Footer = () => {
               <ChevronRight /> <a href="/gallery">Gallery</a>
             </li>
             <li>
+              <ChevronRight /> <a href="/blogs">Blogs</a>
+            </li>
+            <li>
+              <ChevronRight /> <a href="/career">Career</a>
+            </li>
+            <li>
               <ChevronRight /> <a href="/contact">Contact</a>
             </li>
           </ul>
@@ -176,7 +190,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className={styles.contactItem}>
+          {/* <div className={styles.contactItem}>
             <div className={styles.iconWrapper}>
               <Phone />
             </div>
@@ -184,7 +198,7 @@ const Footer = () => {
               <a href="tel:+919998841336">+91 9999841336</a>,{" "}
               <a href="tel:+919717741336">9717741336</a>
             </p>
-          </div>
+          </div> */}
 
           <div className={styles.contactItem}>
             <div className={styles.iconWrapper}>
