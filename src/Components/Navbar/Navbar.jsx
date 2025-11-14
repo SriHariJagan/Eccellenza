@@ -41,6 +41,19 @@ const Navbar = () => {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+  const index = navItems.findIndex((item) => {
+    if (item.path === "/blogs") {
+      return location.pathname.startsWith("/blogs");
+    }
+    return item.path === location.pathname;
+  });
+
+  setActiveIndex(index !== -1 ? index : 0);
+  setMenuOpen(false);
+}, [location.pathname]);
+
+
   return (
     <>
       <nav className={styles.navbar}>
