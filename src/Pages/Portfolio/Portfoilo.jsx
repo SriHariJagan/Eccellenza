@@ -1,82 +1,100 @@
-import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import styles from "./portfolio.module.css";
-import { projectsData } from "../../data";
+import React, { useState, useMemo, useEffect } from "react";
+import { motion } from "framer-motion";
+import LightGallery from "lightgallery/react";
 
-const categories = ["Offices", "Residentials", "Restaurant", "Retail"];
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+
+import styles from "./portfolio.module.css";
+import { projects } from "../../data";
+import { formatTitle } from "../../Utils/formatTitle";
+import LightGalleryWrapper from "../../Components/LightGalleryWrapper";
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Offices");
-  const normalizedCategory = selectedCategory.toLowerCase();
+  const mainCategories = Object.keys(projects);
 
-  // Filter images based on selected category
-  const filteredProjects = useMemo(() => {
-    if (normalizedCategory === "Offices") return projectsData;
-    return projectsData.filter(
-      (proj) =>
-        proj.category &&
-        proj.category.toLowerCase().trim() === normalizedCategory
-    );
-  }, [normalizedCategory]);
+  const [selectedMain, setSelectedMain] = useState(mainCategories[0]);
+  const [selectedSub, setSelectedSub] = useState("");
+
+  const subCategories = useMemo(
+    () => Object.keys(projects[selectedMain] || {}),
+    [selectedMain]
+  );
+
+  useEffect(() => {
+    setSelectedSub(subCategories[0] || "");
+  }, [selectedMain]);
+
+  const galleryImages = useMemo(() => {
+    if (!selectedSub) return [];
+    return projects[selectedMain][selectedSub] || [];
+  }, [selectedMain, selectedSub]);
 
   return (
     <div className={styles.galleryWrapper}>
-      <h2 className={styles.heading}>Our Projects</h2>
+      {/* ================= Banner ================= */}
+      <div className={styles.banner}>
+        <h1 className={styles.bannerTitle}>Our Portfolio</h1>
+        <p className={styles.bannerSubtitle}>
+          Explore our commercial and residential interior projects.
+        </p>
+      </div>
 
-      {/* Category Filter Buttons */}
+      {/* ================= Main Categories ================= */}
       <div className={styles.categoryButtons}>
-        {categories.map((cat) => (
+        {mainCategories.map((cat) => (
           <motion.button
             key={cat}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
             className={`${styles.categoryButton} ${
-              selectedCategory === cat ? styles.active : ""
+              selectedMain === cat ? styles.active : ""
             }`}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => setSelectedMain(cat)}
           >
             {cat}
           </motion.button>
         ))}
       </div>
 
-      {/* Gallery Grid with smooth slide transitions */}
-      <motion.div layout className={styles.galleryGrid}>
-        <AnimatePresence mode="wait">
-          {filteredProjects.map((proj, index) => (
-            <motion.div
-              key={proj.src + index}
-              layout
-              className={styles.galleryCard}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{
-                duration: 0.5,
-                ease: "easeInOut",
-                delay: index * 0.05,
-              }}
-            >
-              <motion.div
-                className={styles.imageWrapper}
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-              >
+      {/* ================= Sub Categories ================= */}
+      <div className={styles.subCategoryButtons}>
+        {subCategories.map((sub) => (
+          <motion.button
+            key={sub}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className={`${styles.subCategoryButton} ${
+              selectedSub === sub ? styles.subActive : ""
+            }`}
+            onClick={() => setSelectedSub(sub)}
+          >
+            {formatTitle(sub)}
+          </motion.button>
+        ))}
+      </div>
+
+      {/* ================= Images with LightGallery ================= */}
+      <div className={styles.galleryGrid}>
+        <LightGalleryWrapper className={styles.lightWrapper}>
+          {galleryImages.map((src, index) => (
+            <a key={index} href={src} className={styles.galleryCard}>
+              <div className={styles.imageWrapper}>
                 <img
-                  src={proj.src}
-                  alt={proj.name || proj.category}
-                  loading="lazy"
+                  src={src}
+                  alt={`project-${index}`}
                   className={styles.galleryImage}
+                  loading="lazy"
                 />
-              </motion.div>
-              <div className={styles.imageInfo}>
-                <p className={styles.imageTitle}>{proj.name}</p>
-                <span className={styles.imageCategory}>{proj.category}</span>
               </div>
-            </motion.div>
+            </a>
           ))}
-        </AnimatePresence>
-      </motion.div>
+        </LightGalleryWrapper>
+      </div>
     </div>
   );
 };

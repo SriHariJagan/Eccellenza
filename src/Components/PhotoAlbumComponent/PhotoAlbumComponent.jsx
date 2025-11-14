@@ -1,23 +1,15 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
 import styles from "./PhotoAlbumComponent.module.css";
-
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
 
 const PhotoAlbumComponent = ({ photos = [] }) => {
   const [theme, setTheme] = useState(
@@ -25,41 +17,42 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
   );
 
   useEffect(() => {
-    const observer = new MutationObserver(() => {
+    const obs = new MutationObserver(() => {
       const newTheme = document.documentElement.getAttribute("data-theme");
-      setTheme(newTheme);
+      if (newTheme !== theme) setTheme(newTheme);
     });
-    observer.observe(document.documentElement, {
+
+    obs.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["data-theme"],
     });
-    return () => observer.disconnect();
-  }, []);
 
+    return () => obs.disconnect();
+  }, [theme]);
+
+  // Format once → best performance
   const formattedPhotos = useMemo(
     () =>
-      photos
-        .filter((p) => p.src)
-        .map((p) => ({
-          src: p.src,
-          alt: p.alt || p.name || "Image",
-          width: Number(p.width) || 1200,
-          height: Number(p.height) || 800,
-        })),
+      photos.map((p) => ({
+        src: p.src,
+        alt: p.alt || p.name || "Image",
+        width: +p.width || 1200,
+        height: +p.height || 800,
+      })),
     [photos]
   );
 
-  const handleGalleryOpen = () => {
+  const handleOpen = useCallback(() => {
     document.body.style.overflow = "hidden";
-    const navbar = document.querySelector(".navbar");
-    if (navbar) navbar.style.display = "none";
-  };
+    const nav = document.querySelector(".navbar");
+    if (nav) nav.style.visibility = "hidden";
+  }, []);
 
-  const handleGalleryClose = () => {
+  const handleClose = useCallback(() => {
     document.body.style.overflow = "";
-    const navbar = document.querySelector(".navbar");
-    if (navbar) navbar.style.display = "";
-  };
+    const nav = document.querySelector(".navbar");
+    if (nav) nav.style.visibility = "visible";
+  }, []);
 
   return (
     <div
@@ -68,52 +61,61 @@ const PhotoAlbumComponent = ({ photos = [] }) => {
       }`}
     >
       <LightGallery
-        speed={500}
+        speed={450}
         plugins={[lgThumbnail, lgZoom]}
         elementClassNames={styles.galleryGrid}
-        onAfterOpen={handleGalleryOpen}
-        onBeforeClose={handleGalleryClose}
+        onAfterOpen={handleOpen}
+        onBeforeClose={handleClose}
       >
-        {formattedPhotos.map((photo, i) => (
-          <motion.a
-            key={i}
-            href={photo.src}
-            data-lg-size={`${photo.width}-${photo.height}`}
-            className={styles.photoCard}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeUpVariant}
-          >
-            <ImageWithLoader src={photo.src} alt={photo.alt} />
-            <div className={styles.overlay}>
-              <span>{photo.alt}</span>
-            </div>
-          </motion.a>
-        ))}
+        {formattedPhotos.map((photo, i) => {
+          const { ref, inView } = useInView({
+            triggerOnce: true, // Animate only first time
+            threshold: 0.15,
+          });
+
+          return (
+            <motion.a
+              key={i}
+              ref={ref}
+              href={photo.src}
+              data-lg-size={`${photo.width}-${photo.height}`}
+              className={styles.photoCard}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
+              <LazyImage src={photo.src} alt={photo.alt} />
+              <div className={styles.overlay}>
+                <span>{photo.alt}</span>
+              </div>
+            </motion.a>
+          );
+        })}
       </LightGallery>
     </div>
   );
 };
 
-const ImageWithLoader = ({ src, alt }) => {
+const LazyImage = React.memo(({ src, alt }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <div className={styles.imageWrapper}>
-      {!loaded && <div className={styles.skeletonLoader} />}
+      {!loaded && <div className={styles.skeleton} />}
+
       <motion.img
         src={src}
         alt={alt}
         loading="lazy"
+        decoding="async"
         onLoad={() => setLoaded(true)}
         className={`${styles.photoImg} ${loaded ? styles.loaded : ""}`}
-        initial={{ opacity: 0, scale: 1.05 }}
+        initial={{ opacity: 0, scale: 1.04 }}
         animate={loaded ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.45 }}
       />
     </div>
   );
-};
+});
 
 export default PhotoAlbumComponent;

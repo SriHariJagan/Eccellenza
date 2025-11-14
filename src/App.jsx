@@ -5,6 +5,7 @@ import Footer from "./Pages/Footer/Footer";
 import ScrollToTop from "./Utils/ScrollToTop";
 import Blogs from "./Pages/Blogs/Blogs";
 import BlogDetails from "./Components/BlogDetails/BlogDetails";
+import Portfolio from "./Pages/Portfolio/Portfoilo";
 
 // ✅ Lazy-loaded pages
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -40,7 +41,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Portfolio />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Carrer />} />
             <Route path="/blogs" element={<Blogs />} />
