@@ -46,7 +46,7 @@ const OurTeam = () => {
 
   return (
     <section className={styles.ourTeam} id="team">
-      <h2 className={styles.heading}>Our Team</h2>
+      <h2 className={styles.heading}>Our Core Team</h2>
       <div className={styles.grid}>
         {team.map((member, index) => (
           <TeamCard key={index} {...member} />
