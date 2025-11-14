@@ -21,25 +21,25 @@ const OurTeam = () => {
     {
       photo: "/Images/OutTeam/Founder & CEO.avif",
       name: "Mr Anil Kumar Sharma",
-      role: "Project Director",
+      role: "Founder & CEO",
       desc: "Leads all design and build operations with 10+ years in commercial interiors.",
     },
     {
       photo: "/Images/OutTeam/Design Lead.avif",
       name: "Ms Megha Rawat",
-      role: "Lead Architect",
+      role: "Design Lead",
       desc: "Specializes in functional workspace design that balances beauty and efficiency.",
     },
     {
       photo: "/Images/OutTeam/Operations (East & South).avif",
       name: "Mr Bishwajeet Sharma",
-      role: "Operations (East & South)",
+      role: "Operations - South & East",
       desc: "Focuses on bringing client visions to life with modern and sustainable designs.",
     },
     {
       photo: "/Images/OutTeam/Operations (North & West).avif",
       name: "Mr Jagdish Sharma",
-      role: "Operations (North & West)",
+      role: "Operations- North & West",
       desc: "Focuses on bringing client visions to life with modern and sustainable designs.",
     },
   ];
