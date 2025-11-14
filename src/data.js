@@ -20,7 +20,7 @@ export const galleryImages = [
     "/Images/gallery/insurance/5.avif",
     "/Images/gallery/insurance/6.avif",
     "/Images/gallery/insurance/7.avif",
-    "/Images/gallery/insurance/8.avif",
+    // "/Images/gallery/insurance/8.avif",
     "/Images/gallery/insurance/9.avif",
     "/Images/gallery/insurance/10.avif",
     "/Images/gallery/insurance/11.avif",
@@ -106,6 +106,7 @@ export const galleryImages = [
     "/Images/gallery/office/5.avif",
     "/Images/gallery/office/6.avif",
     "/Images/gallery/office/7.avif",
+    "/Images/gallery/office/8.avif",
   ].map((src, i) => ({
     src,
     width: 800,
@@ -167,7 +168,7 @@ export const projects = {
       "/Images/gallery/insurance/5.avif",
       "/Images/gallery/insurance/6.avif",
       "/Images/gallery/insurance/7.avif",
-      "/Images/gallery/insurance/8.avif",
+      // "/Images/gallery/insurance/8.avif",
       "/Images/gallery/insurance/9.avif",
       "/Images/gallery/insurance/10.avif",
       "/Images/gallery/insurance/11.avif",
@@ -204,6 +205,7 @@ export const projects = {
       "/Images/gallery/office/5.avif",
       "/Images/gallery/office/6.avif",
       "/Images/gallery/office/7.avif",
+      "/Images/gallery/office/8.avif",
     ],
   },
   Residential: {
