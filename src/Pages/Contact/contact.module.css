@@ -260,6 +260,41 @@
   display: block;
 }
 
+.alert {
+  padding: 10px 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  animation: fadeSlideIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.success {
+  background: rgba(0, 170, 90, 0.15);
+  color: #009f5d;
+  border-left: 4px solid #00c475;
+}
+
+.error {
+  background: rgba(255, 65, 65, 0.15);
+  color: #d62828;
+  border-left: 4px solid #ff4a4a;
+}
+
+/* Fade In Animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ===================== Responsive ===================== */
 @media (max-width: 900px) {
   .contactCard {

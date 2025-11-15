@@ -13,7 +13,7 @@ export const galleryImages = [
     "/Images/gallery/bank/10.avif",
     "/Images/gallery/bank/11.avif",
     "/Images/gallery/bank/12.avif",
-     "/Images/gallery/insurance/1.avif",
+    "/Images/gallery/insurance/1.avif",
     "/Images/gallery/insurance/2.avif",
     "/Images/gallery/insurance/3.avif",
     "/Images/gallery/insurance/4.avif",
@@ -116,24 +116,25 @@ export const galleryImages = [
   })),
 
   // === Residencies ===
-  ...[
-    "/Images/gallery/residency.png",
-    "/Images/gallery/restaurant.png",
-  ].map((src, i) => ({
-    src,
-    width: 800,
-    height: 600,
-    category: "Residential",
-    name: `Residential Project ${i + 1}`,
-  })),
+  ...["/Images/gallery/homeInteriors/1.webp",
+      "/Images/gallery/homeInteriors/2.webp",
+      "/Images/gallery/homeInteriors/3.webp",
+      "/Images/gallery/homeInteriors/4.webp",
+      "/Images/gallery/homeInteriors/5.webp",].map(
+    (src, i) => ({
+      src,
+      width: 800,
+      height: 600,
+      category: "Residential",
+      name: `Residential Project ${i + 1}`,
+    })
+  ),
 
   // === Modular Kitchens ===
   ...[
-    "/Images/gallery/kitchen/1.avif",
-    "/Images/gallery/kitchen/2.avif",
-    "/Images/gallery/kitchen/3.avif",
-    "/Images/gallery/kitchen/4.avif",
-    "/Images/gallery/kitchen/5.avif",
+    "/Images/gallery/modularKitchen/1.webp",
+    "/Images/gallery/modularKitchen/2.webp",
+    "/Images/gallery/modularKitchen/3.webp",
   ].map((src, i) => ({
     src,
     width: 800,
@@ -141,10 +142,7 @@ export const galleryImages = [
     category: "Modular Kitchen",
     name: `Kitchen Design ${i + 1}`,
   })),
-
-  
 ];
-
 
 export const projects = {
   Commercial: {
@@ -210,19 +208,19 @@ export const projects = {
   },
   Residential: {
     homeInteriors: [
-      "/Images/gallery/residency.png",
-      "/Images/gallery/restaurant.png",
+      "/Images/gallery/homeInteriors/1.webp",
+      "/Images/gallery/homeInteriors/2.webp",
+      "/Images/gallery/homeInteriors/3.webp",
+      "/Images/gallery/homeInteriors/4.webp",
+      "/Images/gallery/homeInteriors/5.webp",
     ],
     modularKitchen: [
-      "/Images/gallery/kitchen/1.avif",
-      "/Images/gallery/kitchen/2.avif",
-      "/Images/gallery/kitchen/3.avif",
-      "/Images/gallery/kitchen/4.avif",
-      "/Images/gallery/kitchen/5.avif",
+      "/Images/gallery/modularKitchen/1.webp",
+      "/Images/gallery/modularKitchen/2.webp",
+      "/Images/gallery/modularKitchen/3.webp",
     ],
   },
 };
-
 
 // src/Pages/Blogs/blogData.js
 
@@ -303,4 +301,3 @@ export const blogData = [
     ],
   },
 ];
-

@@ -1,13 +1,13 @@
+import React from "react";
+import { ThemeProvider } from "./Context/ThemeProvider";
+import MailsProvider from "./Context/MailsProvider";
 
-import React from 'react'
-import { ThemeProvider } from './Context/ThemeProvider'
-
-const Store = ({children}) => {
+const Store = ({ children }) => {
   return (
     <ThemeProvider>
-        {children}
+      <MailsProvider>{children}</MailsProvider>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Store
+export default Store;

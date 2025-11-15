@@ -36,23 +36,19 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const index = navItems.findIndex((item) => item.path === location.pathname);
+    const index = navItems.findIndex((item) => {
+      // Special case: highlight Blogs for all routes like /blogs, /blogs/abc, /blogs/category/xyz
+      if (item.path === "/blogs") {
+        return location.pathname.startsWith("/blogs");
+      }
+
+      // Normal matching
+      return item.path === location.pathname;
+    });
+
     setActiveIndex(index !== -1 ? index : 0);
     setMenuOpen(false);
   }, [location.pathname]);
-
-  useEffect(() => {
-  const index = navItems.findIndex((item) => {
-    if (item.path === "/blogs") {
-      return location.pathname.startsWith("/blogs");
-    }
-    return item.path === location.pathname;
-  });
-
-  setActiveIndex(index !== -1 ? index : 0);
-  setMenuOpen(false);
-}, [location.pathname]);
-
 
   return (
     <>
@@ -63,9 +59,7 @@ const Navbar = () => {
             <img
               key={theme} // triggers smooth transition on theme change
               src={
-                theme === "light"
-                  ? "/Images/logo1.png"
-                  : "/Images/darkLogo.png"
+                theme === "light" ? "/Images/logo1.png" : "/Images/darkLogo.png"
               }
               alt="Eccellenza Infra Logo"
               className={styles.logoImage}

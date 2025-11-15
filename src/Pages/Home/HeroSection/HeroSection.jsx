@@ -6,12 +6,13 @@ import { Instagram, Facebook } from "lucide-react";
 
 
 const imageList = [
-  "https://blog.buyerselect.com/wp-content/uploads/2024/05/organic-modern-interior-design.jpg",
-  "https://vishwakarmainteriors.com/wp-content/uploads/2024/02/interior-room-design-with-armchair-potted-plants-1024x683.jpg",
-  "https://homestolife.com/cdn/shop/articles/small-apartment-interior-design-ideas-that-scream-personality-homestolife.jpg",
-  "https://www.favouritehomes.com/wp-content/uploads/2023/08/Minimalist_apartment_interior_design_Embracing_simplicity_1.jpg",
-  "https://homestolife.com/cdn/shop/articles/small-apartment-interior-design-ideas-that-scream-personality-homestolife.jpg",
-  "https://www.favouritehomes.com/wp-content/uploads/2023/08/Minimalist_apartment_interior_design_Embracing_simplicity_1.jpg",
+  "/Images/gallery/office/1.avif",
+  "/Images/gallery/office/2.avif",
+  "/Images/gallery/office/3.avif",
+  "/Images/gallery/office/4.avif",
+  "/Images/gallery/office/5.avif",
+  "/Images/gallery/office/7.avif",
+  "/Images/gallery/office/8.avif",
 ];
 
 const HeroSection = () => {

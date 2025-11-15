@@ -74,10 +74,11 @@
 
 .formGroup textarea {
   grid-column: span 1;
-  /* resize: none; */
   min-height: 50px;
   max-height: 100px;
+  resize: vertical; /* ✅ Allow only height resize */
 }
+
 
 .submitBtn {
   grid-column: span 2;
@@ -96,6 +97,56 @@
   background: var(--btn-hover-bg);
   transform: translateY(-2px);
 }
+
+/* ----------------------------- */
+/* ✅ SUCCESS & ERROR ALERT BOXES */
+/* ----------------------------- */
+
+.successBox,
+.errorBox {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  border-left-width: 5px;
+  border-left-style: solid;
+  box-shadow: 0 6px 20px var(--shadow-soft);
+}
+
+/* Success */
+.successBox {
+  background: rgba(0, 200, 70, 0.12);
+  color: #079b3f;
+  border-left-color: #06b34f;
+}
+
+/* Error */
+.errorBox {
+  background: rgba(255, 60, 60, 0.12);
+  color: #d93025;
+  border-left-color: #ff4b4b;
+}
+
+/* ------------------------------------ */
+/* ✅ FIELD ERROR (INPUT RED BORDER ETC) */
+/* ------------------------------------ */
+
+.errorInput {
+  border-color: #ff4b4b !important;
+  box-shadow: 0 0 6px rgba(255, 75, 75, 0.3) !important;
+}
+
+/* Error text under field */
+.errorMsg {
+  margin-top: 0.35rem;
+  color: #d93025;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 
 @media (max-width: 768px) {
   .form {
