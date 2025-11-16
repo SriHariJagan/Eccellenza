@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Blogs.module.css";
 import { blogData } from "../../data";
 
@@ -10,6 +10,9 @@ const fadeUp = {
 };
 
 const Blogs = () => {
+
+  const navigate = useNavigate()
+
   return (
     <section className={styles.blogSection}>
       <motion.div
@@ -33,6 +36,8 @@ const Blogs = () => {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
+
+            onClick={() => navigate(`/blogs/${blog.id}`)}
           >
             <div className={styles.imageWrapper}>
               <img src={blog.image} alt={blog.title} />

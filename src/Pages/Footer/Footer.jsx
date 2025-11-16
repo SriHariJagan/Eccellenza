@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./Footer.module.css";
+import OfficeServiceLinks from "../../Components/OfficeServiceLinks";
 import {
   MapPin,
   Phone,
@@ -216,6 +217,8 @@ const Footer = () => {
       <div className={styles.bottomBar}>
         © {new Date().getFullYear()} Eccellenza Infra Build Pvt. Ltd. · All Rights Reserved
       </div>
+
+            <OfficeServiceLinks />
     </footer>
   );
 };

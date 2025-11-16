@@ -6,6 +6,7 @@ import ScrollToTop from "./Utils/ScrollToTop";
 import Blogs from "./Pages/Blogs/Blogs";
 import BlogDetails from "./Components/BlogDetails/BlogDetails";
 import Portfolio from "./Pages/Portfolio/Portfoilo";
+import ServicePage from "./Components/ServicePage/ServicePage";
 
 // ✅ Lazy-loaded pages
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -46,6 +47,12 @@ const App = () => {
             <Route path="/career" element={<Carrer />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="/:slug" element={<ServicePage />} />
+
+
+
+            <Route path="*" element={<Home />} />
+
           </Routes>
         </main>
 
@@ -53,6 +60,7 @@ const App = () => {
         <footer>
           <Footer />
         </footer>
+
       </Suspense>
     </>
   );

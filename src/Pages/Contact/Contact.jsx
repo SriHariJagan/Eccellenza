@@ -109,7 +109,7 @@ const Contact = () => {
         <div className={styles.infoSection}>
           <div className={styles.illustration}>
             <img
-              src="https://img.freepik.com/free-vector/hand-drawn-flat-design-customer-support-illustration_23-2148908913.jpg"
+              src="/Images/carrer.avif"
               alt="Customer Support Illustration"
               loading="lazy"
             />

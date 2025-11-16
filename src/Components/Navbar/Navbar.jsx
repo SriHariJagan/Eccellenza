@@ -46,7 +46,7 @@ const Navbar = () => {
       return item.path === location.pathname;
     });
 
-    setActiveIndex(index !== -1 ? index : 0);
+    setActiveIndex(index);
     setMenuOpen(false);
   }, [location.pathname]);
 

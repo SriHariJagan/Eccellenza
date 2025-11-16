@@ -19,25 +19,25 @@ const TeamCard = ({ photo, name, role, desc }) => (
 const OurTeam = () => {
   const team = [
     {
-      photo: "/Images/OutTeam/Founder & CEO.avif",
+      photo: "/Images/OutTeam/Founder & CEO.webp",
       name: "Mr Anil Kumar Sharma",
       role: "Founder & CEO",
       desc: "Leads all design and build operations with 10+ years in commercial interiors.",
     },
     {
-      photo: "/Images/OutTeam/Design Lead.avif",
+      photo: "/Images/OutTeam/Design Lead.webp",
       name: "Ms Megha Rawat",
       role: "Design Lead",
       desc: "Specializes in functional workspace design that balances beauty and efficiency.",
     },
     {
-      photo: "/Images/OutTeam/Operations (East & South).avif",
+      photo: "/Images/OutTeam/Operations (East & South).webp",
       name: "Mr Bishwajeet Sharma",
       role: "Operations - South & East",
       desc: "Focuses on bringing client visions to life with modern and sustainable designs.",
     },
     {
-      photo: "/Images/OutTeam/Operations (North & West).avif",
+      photo: "/Images/OutTeam/Operations (North & West).webp",
       name: "Mr Jagdish Sharma",
       role: "Operations- North & West",
       desc: "Focuses on bringing client visions to life with modern and sustainable designs.",
