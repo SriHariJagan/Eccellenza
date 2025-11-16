@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { services } from "../../data";
-import FAQSection from "../../components/FAQSection/FAQSection";
 import styles from "./servicePage.module.css";
 import { motion } from "framer-motion";
+import FAQSection from "../FAQSection/FAQSection";
 
 // Animation variants
 const fadeUp = {
