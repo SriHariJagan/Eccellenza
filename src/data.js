@@ -1030,7 +1030,7 @@ export const services = {
     link: "/office-interior-kolkata",
 
     title: "Eccellenza Infra — Office Interior Designer in Kolkata",
-    image: "/Images/gallery/office/5.avif",
+    image: "/Images/gallery/office/8.avif",
 
     description: `
       Crafting Inspiring Offices in Kolkata with Eccellenza Infra.
